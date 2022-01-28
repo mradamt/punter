@@ -8,9 +8,8 @@ export default function Content (props: any) {
   return (
     <div className="content">
       <p className="content-text">
-        I AM CONTENT
+        {props.content}
       </p>
-      {props.content}
     </div>
   )
 }
