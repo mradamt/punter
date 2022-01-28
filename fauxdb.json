@@ -1,0 +1,48 @@
+{
+  "posts": {
+    "0": {
+      "content": "placeholder post 0",
+      "tags": {
+        "1": "tag a",
+        "2": "tag b"
+      },
+      "created_by": {
+        "author": "author a",
+        "timestamp": 100000
+      }
+    },
+    "1": {
+      "content": "placeholder post 1",
+      "tags": {
+        "1": "tag a",
+        "2": "tag b"
+      },
+      "created_by": {
+        "author": "author a",
+        "timestamp": 100001
+      }
+    },
+    "2": {
+      "content": "placeholder post 2",
+      "tags": {
+        "1": "tag a",
+        "2": "tag b"
+      },
+      "created_by": {
+        "author": "author b",
+        "timestamp": 100002
+      }
+    },
+    "3": {
+      "content": "placeholder post 3",
+      "tags": {
+        "1": "tag a",
+        "2": "tag b"
+      },
+      "created_by": {
+        "author": "author a",
+        "timestamp": 100003
+      }
+    }
+  }
+}
