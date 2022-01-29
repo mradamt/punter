@@ -4,13 +4,16 @@ import Tags from './Tags';
 
 import './Post.scss'
 
-export default function Post (props: any) {
+const dummyTags = ["tag a", "tag b"]
 
+export default function Post (props: any) {
   return (
     <div className='post'>
       <Content content='content placeholder'/>
-      <Tags tags='tags placeholder' />
-      Posted by [placeholder user] on [placeholder date]
+      <Tags tags={dummyTags} />
+      <div className='author'>
+        Posted by [placeholder user] on [placeholder date]
+      </div>
     </div>
   )
 }
