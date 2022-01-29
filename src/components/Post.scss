@@ -1,6 +1,12 @@
 .post {
   display: flex;
   justify-content: center;
-  border: 1px solid lightgray;
+  align-items: center;
+  border: 2px solid lightseagreen;
   width: 50%;
+  padding: 1em;
+  margin: 1em;
+  .author {
+    border: 1px solid lightcoral;
+  }
 }
