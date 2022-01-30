@@ -14,7 +14,9 @@ function App() {
         Filters
       </section>
       <section className='posts'>
-        <Posts />
+        <Posts 
+          posts={db.posts}
+        />
       </section>
     </main>
   );
