@@ -1,8 +1,7 @@
 import React from 'react';
 import Content from './Content';
 import Tags from './Tags';
-
-import './Post.scss'
+import './sass-styles/Post.scss'
 
 const dummyTags = ["tag a", "tag b"]
 

@@ -1,5 +1,5 @@
 import Post from './Post';
-import './App.scss';
+import './sass-styles/App.scss';
 
 function App() {
   return (

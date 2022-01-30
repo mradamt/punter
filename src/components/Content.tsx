@@ -1,6 +1,5 @@
 import React from "react";
-
-import './Content.scss'
+import './sass-styles/Content.scss'
 
 export default function Content (props: any) {
 
