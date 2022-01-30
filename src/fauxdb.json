@@ -5,10 +5,7 @@
         "text": "placeholder post 0",
         "template": "template placeholder"
       },
-      "tags": {
-        "1": "tag a",
-        "2": "tag b"
-      },
+      "tags": ["tagA", "tagB"],
       "created_by": {
         "author": "author a",
         "timestamp": 100000
@@ -19,10 +16,7 @@
         "text": "placeholder post 1",
         "template": "template placeholder"
       },
-      "tags": {
-        "1": "tag a",
-        "2": "tag b"
-      },
+      "tags": ["tagA", "tagB"],
       "created_by": {
         "author": "author a",
         "timestamp": 100001
@@ -33,10 +27,7 @@
         "text": "placeholder post 2",
         "template": "template placeholder"
       },
-      "tags": {
-        "1": "tag a",
-        "2": "tag b"
-      },
+      "tags": ["tagA", "tagB"],
       "created_by": {
         "author": "author b",
         "timestamp": 100002
@@ -47,10 +38,7 @@
         "text": "placeholder post 3",
         "template": "template placeholder"
       },
-      "tags": {
-        "1": "tag a",
-        "2": "tag b"
-      },
+      "tags": ["tagA", "tagB"],
       "created_by": {
         "author": "author a",
         "timestamp": 100003
