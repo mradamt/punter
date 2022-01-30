@@ -7,7 +7,7 @@ export default function Content (props: any) {
   return (
     <div className="content">
       <p className="content-text">
-        {props.content}
+        {props.text}
       </p>
     </div>
   )

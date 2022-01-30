@@ -8,7 +8,7 @@ const dummyTags = ["tag a", "tag b"]
 export default function Post (props:any) {
   return (
     <div className='post'>
-      <Content content='content placeholder'/>
+      <Content text={props.text} />
       <Tags tags={dummyTags} />
       <div className='author'>
         Posted by [placeholder user] on [placeholder date]
