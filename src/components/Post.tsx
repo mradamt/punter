@@ -5,7 +5,7 @@ import './sass-styles/Post.scss'
 
 const dummyTags = ["tag a", "tag b"]
 
-export default function Post (props: any) {
+export default function Post (props:any) {
   return (
     <div className='post'>
       <Content content='content placeholder'/>

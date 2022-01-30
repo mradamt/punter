@@ -1,7 +1,10 @@
 {
   "posts": {
     "0": {
-      "content": "placeholder post 0",
+      "content": {
+        "text": "placeholder post 0",
+        "template": "template placeholder"
+      },
       "tags": {
         "1": "tag a",
         "2": "tag b"
@@ -12,7 +15,10 @@
       }
     },
     "1": {
-      "content": "placeholder post 1",
+      "content": {
+        "text": "placeholder post 1",
+        "template": "template placeholder"
+      },
       "tags": {
         "1": "tag a",
         "2": "tag b"
@@ -23,7 +29,10 @@
       }
     },
     "2": {
-      "content": "placeholder post 2",
+      "content": {
+        "text": "placeholder post 2",
+        "template": "template placeholder"
+      },
       "tags": {
         "1": "tag a",
         "2": "tag b"
@@ -34,7 +43,10 @@
       }
     },
     "3": {
-      "content": "placeholder post 3",
+      "content": {
+        "text": "placeholder post 3",
+        "template": "template placeholder"
+      },
       "tags": {
         "1": "tag a",
         "2": "tag b"
