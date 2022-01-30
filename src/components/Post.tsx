@@ -11,7 +11,9 @@ export default function Post (props:any) {
       <Content text={props.text} />
       <Tags tags={dummyTags} />
       <div className='author'>
-        Posted by [placeholder user] on [placeholder date]
+        <span>
+          Posted by '{props.author}' on '{props.timestamp}'
+        </span>
       </div>
     </div>
   )
