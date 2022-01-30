@@ -1,6 +1,8 @@
-import Post from './Post';
+import Posts from './Posts';
 import Form from './Form';
 import './sass-styles/App.scss';
+
+import db from '../../fauxdb.json'
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
         Filters
       </section>
       <section className='posts'>
-        <Post />
+        <Posts />
       </section>
     </main>
   );
