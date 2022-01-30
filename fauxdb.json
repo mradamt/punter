@@ -1,6 +1,6 @@
 {
-  "posts": {
-    "0": {
+  "posts": [
+    {
       "content": {
         "text": "placeholder post 0",
         "template": "template placeholder"
@@ -14,7 +14,7 @@
         "timestamp": 100000
       }
     },
-    "1": {
+    {
       "content": {
         "text": "placeholder post 1",
         "template": "template placeholder"
@@ -28,7 +28,7 @@
         "timestamp": 100001
       }
     },
-    "2": {
+    {
       "content": {
         "text": "placeholder post 2",
         "template": "template placeholder"
@@ -42,7 +42,7 @@
         "timestamp": 100002
       }
     },
-    "3": {
+    {
       "content": {
         "text": "placeholder post 3",
         "template": "template placeholder"
@@ -56,5 +56,5 @@
         "timestamp": 100003
       }
     }
-  }
+  ]
 }
