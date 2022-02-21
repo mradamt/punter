@@ -1,3 +1,6 @@
 .posts {
-  border: 1px solid peru;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // border: 1px solid peru;
 }

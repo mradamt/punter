@@ -1,12 +1,28 @@
 .post {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   border: 2px solid lightseagreen;
-  width: 50%;
-  padding: 1em;
-  margin: 1em;
-  .author {
-    border: 1px solid lightcoral;
+  width: 80%;
+  padding: 0.5em;
+  margin: 0.5em;
+  .content {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 3em;
+    // border: 1px solid black;
+    font-weight: bold;
+  }
+  .metadata {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // border: 1px dashed darkblue;
+    width: 80%;
+    .author {
+      // border: 1px solid lightcoral;
+    }
   }
 }
