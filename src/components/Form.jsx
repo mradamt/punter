@@ -8,10 +8,16 @@ export default function Form (props) {
      
   }
 
+  const submitPost = (event) => {
+    event.preventDefault()
+    // validate post?
+    // execute 'add post' function to add to main state
+  }
+
   return (
-    <form action="POST" onSubmit={props.submitPost}>
+    <form action="POST" onSubmit={submitPost}>
       <span>If </span>
-      <textarea placeholder="monkeys?"/>
+      <textarea value={text} onChange={event => setText(event.target.value)} placeholder="be funny here?" />
       <span> doesn't exist, capitalism has failed us</span>
     </form>
   )
