@@ -15,7 +15,6 @@ function App() {
     ])
   }
 
-  
   return (
     <main className='App'>
       <section className='submission-form'>

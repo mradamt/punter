@@ -13,7 +13,7 @@ export default function Posts(props) {
   />)
 
   return (
-    <section className='posts'>
+    <section>
       {posts}
     </section>
   )
