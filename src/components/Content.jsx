@@ -1,7 +1,7 @@
 import React from "react";
 import './sass-styles/Post.scss'
 
-export default function Content (props: any) {
+export default function Content (props) {
 
   return (
     <div className="content">

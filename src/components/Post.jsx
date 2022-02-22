@@ -3,7 +3,7 @@ import Content from './Content';
 import Tags from './Tags';
 import './sass-styles/Post.scss'
 
-export default function Post (props:any) {
+export default function Post (props) {
   return (
     <div className='post'>
       <Content text={props.text} />
