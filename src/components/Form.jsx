@@ -18,15 +18,13 @@ export default function Form (props) {
   return (
     <section className='submission-form'>
       <form action="POST" onSubmit={submitPost}>
-        <div className="prompt">
-          <span>If </span>
-          <textarea 
         <div className="submission-form-text">
+          <input 
             value={text} 
             onChange={event => setText(event.target.value)} 
-            placeholder="be funny here?" 
+            placeholder="If [blank] doesn't exist" 
           />
-          <span> doesn't exist, capitalism has failed us</span>
+          <span>, then capitalism has failed us</span>
         </div>
         <button type="submit">Post</button>
       </form>
