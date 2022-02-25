@@ -5,14 +5,28 @@ export default function Form (props) {
   const [text, setText] = useState()
 
   const formatPost = (text, template, tags, author) => {
-     
+     return (
+      {
+        "content": {
+          "text": text,
+          "template": template
+        },
+        "tags": tags,
+        "created_by": {
+          "author": author,
+          "timestamp": Date.now()
+        }
+      }
+     )
   }
 
   const submitPost = (event) => {
     event.preventDefault()
     console.log(`post 'posted': ${text}`);
-    // validate post?
+    // validate post
+    // verify post
     // execute 'add post' function to add to main state
+    props.savePost(formatPost(text, "templaceholder", ['mytag1', 'mytag2'], 'John Authorson'))
   }
 
   return (

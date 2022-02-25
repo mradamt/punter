@@ -6,23 +6,20 @@ import './sass-styles/App.scss';
 
 import db from '../fauxdb.json'
 
-function App() {
+export default function App() {
   const [data, setData] = useState(db.posts)
 
-  const submitPost = (post) => {
-    setData([
-      ...data,
-      post
-    ])
+  console.log('state:', data);
+  
+  const savePost = (post) => {
+    setData([post, ...data])
   }
 
   return (
     <main className='App'>
-      <Form submitPost={submitPost}/>
+      <Form savePost={savePost}/>
       <Filters />
       <Posts posts={data}/>
     </main>
   );
 }
-
-export default App;
