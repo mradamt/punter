@@ -3,7 +3,7 @@ import './sass-styles/Filters.scss'
 export default function Filters (props) {
 
   return (
-    <section className='filters'>
+    <section className='filter-posts'>
       Filters placeholder
     </section>
   )

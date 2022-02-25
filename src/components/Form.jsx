@@ -16,10 +16,12 @@ export default function Form (props) {
   }
 
   return (
+    <section className='submission-form'>
       <form action="POST" onSubmit={submitPost}>
         <div className="prompt">
           <span>If </span>
           <textarea 
+        <div className="submission-form-text">
             value={text} 
             onChange={event => setText(event.target.value)} 
             placeholder="be funny here?" 
@@ -28,5 +30,6 @@ export default function Form (props) {
         </div>
         <button type="submit">Post</button>
       </form>
+    </section>
   )
 }

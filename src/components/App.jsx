@@ -18,17 +18,9 @@ function App() {
 
   return (
     <main className='App'>
-      <section className='submission-form'>
-        <Form submitPost={submitPost}/>
-      </section>
-      <section className='filter-posts'>
-        <Filters />
-      </section>
-      <section className='posts'>
-        <Posts 
-          posts={data}
-        />
-      </section>
+      <Form submitPost={submitPost}/>
+      <Filters />
+      <Posts posts={data}/>
     </main>
   );
 }
