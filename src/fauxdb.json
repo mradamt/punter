@@ -3,20 +3,20 @@
     {
       "content": {
         "text": "placeholder post 0",
-        "template": "template placeholder"
+        "prompt": "prompt placeholder"
       },
-      "tags": ["tagA", "tagB"],
+      "reaction_counts": [1,1,4,5,1],
       "created_by": {
-        "author": "author a",
+        "author": "AAA",
         "timestamp": 100000
       }
     },
     {
       "content": {
         "text": "placeholder post 1",
-        "template": "template placeholder"
+        "prompt": "prompt placeholder"
       },
-      "tags": ["tagA", "tagB"],
+      "reaction_counts": [1,1,4,5,1],
       "created_by": {
         "author": "author a",
         "timestamp": 100001
@@ -25,9 +25,9 @@
     {
       "content": {
         "text": "placeholder post 2",
-        "template": "template placeholder"
+        "prompt": "prompt placeholder"
       },
-      "tags": ["tagA", "tagB"],
+      "reaction_counts": [1,1,4,5,1],
       "created_by": {
         "author": "author b",
         "timestamp": 100002
@@ -36,9 +36,9 @@
     {
       "content": {
         "text": "placeholder post 3",
-        "template": "template placeholder"
+        "prompt": "prompt placeholder"
       },
-      "tags": ["tagA", "tagB"],
+      "reaction_counts": [1,1,4,5,1],
       "created_by": {
         "author": "author a",
         "timestamp": 100003
