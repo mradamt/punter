@@ -7,7 +7,7 @@ export default function Posts(props) {
   const posts = props.posts.map((post, index) => <Post 
     key={index}    
     text={post.content.text}
-    tags={post.tags}
+    reactionCounts={post.reaction_counts}
     author={post.created_by.author}
     timestamp={post.created_by.timestamp}
   />)
