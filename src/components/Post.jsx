@@ -6,7 +6,7 @@ import './sass-styles/Post.scss'
 export default function Post (props) {
   return (
     <div className='post'>
-      <Content text={props.text} />
+      <Content content={props.content} />
       <div className='metadata'>
         <Reactions reactions={props.reactions} />
         <div className='author'>

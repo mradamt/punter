@@ -19,7 +19,7 @@ export default function App() {
     <main className='App'>
       <Form savePost={savePost}/>
       <Filters />
-      <Posts posts={data}/>
+      <Posts posts={data} reactionTypes={db.reaction_types}/>
     </main>
   );
 }

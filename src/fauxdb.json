@@ -44,5 +44,32 @@
         "timestamp": 100003
       }
     }
+  ],
+  "reaction_types": [
+    {
+      "index": 0,
+      "label": "hard no",
+      "icon": "emoji0"
+    },
+    {
+      "index": 1,
+      "label": "meh",
+      "icon": "emoji1"
+    },
+    {
+      "index": 2,
+      "label": "single ha",
+      "icon": "emoji2"
+    },
+    {
+      "index": 3,
+      "label": "multiple ha",
+      "icon": "emoji3"
+    },
+    {
+      "index": 4,
+      "label": "gem",
+      "icon": "emoji4"
+    }
   ]
 }
