@@ -6,14 +6,14 @@ export default function Form (props) {
   const [prompt, setPrompt] = useState('If puns had the respect they deserve')
   const [author, setAuthor] = useState('auth placeholder')
 
-  const formatPost = (text, template, tags, author) => {
+  const formatPost = (text, prompt, author) => {
      return (
       {
         "content": {
           "text": text,
-          "template": template
+          "prompt": prompt
         },
-        "tags": tags,
+        "reaction_counts": [0,0,0,0,0],
         "created_by": {
           "author": author,
           "timestamp": Date.now()
@@ -29,7 +29,7 @@ export default function Form (props) {
     // validate post
     // verify post
     // execute 'add post' function to add to main state
-    props.savePost(formatPost(text, 'templaceholder', ['mytag1', 'mytag2'], 'John Authorson'))
+    props.savePost(formatPost(text, 'templaceholder', 'IPA'))
     setText('')
   }
 
