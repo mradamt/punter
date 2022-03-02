@@ -3,7 +3,7 @@ import Post from './Post';
 import './sass-styles/Posts.scss';
 
 export default function Posts(props) {
-  // render Post component for every post in props.posts
+  // render Post component for every post in props.posts, send each Post the array of ReactionTypes
   const posts = props.posts.map((post, index) => <Post 
     key={index}
     content={post.content}  

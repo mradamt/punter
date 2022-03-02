@@ -3,8 +3,8 @@ import './sass-styles/Form.scss'
 
 export default function Form (props) {
   const [text, setText] = useState('')
-  const [prompt, setPrompt] = useState('If puns had the respect they deserve')
-  const [author, setAuthor] = useState('auth placeholder')
+  const [prompt, setPrompt] = useState('If puns were given the respect they deserve,')
+  const [author, setAuthor] = useState('TED')
 
   const formatPost = (text, prompt, author) => {
      return (
@@ -29,7 +29,7 @@ export default function Form (props) {
     // validate post
     // verify post
     // execute 'add post' function to add to main state
-    props.savePost(formatPost(text, 'templaceholder', 'IPA'))
+    props.savePost(formatPost(text, prompt, author))
     setText('')
   }
 
