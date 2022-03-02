@@ -1,4 +1,6 @@
-.tag {
+.reaction {
   border: 1px dashed lightgreen;
-  width: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  // width: 3em;
 }

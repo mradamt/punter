@@ -6,7 +6,7 @@ export default function Content (props) {
   return (
     <div className="content">
       <p className="content-text">
-        {props.text}
+        {props.content.prompt} {props.content.text}
       </p>
     </div>
   )
