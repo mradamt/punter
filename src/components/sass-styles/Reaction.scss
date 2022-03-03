@@ -1,3 +1,14 @@
 .reaction {
   border: 1px dashed lightgreen;
+  width: 6em;
+  .reaction-count {
+    font-weight: bold;
+  }
+  .reaction-icon img {
+    height: 3em;
+    width: 3em;
+  }
+  .reaction-label {
+    color: grey;
+  }
 }

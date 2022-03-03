@@ -49,27 +49,27 @@
     {
       "index": 0,
       "label": "hard no",
-      "icon": "emoji0"
+      "icon": "unamused-face_1f612.png"
     },
     {
       "index": 1,
       "label": "meh",
-      "icon": "emoji1"
+      "icon": "yawning-face_1f971.png"
     },
     {
       "index": 2,
       "label": "single ha",
-      "icon": "emoji2"
+      "icon": "face-with-rolling-eyes_1f644.png"
     },
     {
       "index": 3,
-      "label": "multiple ha",
-      "icon": "emoji3"
+      "label": "plural ha",
+      "icon": "smiling-face-with-sunglasses_1f60e.png"
     },
     {
       "index": 4,
-      "label": "gem",
-      "icon": "emoji4"
+      "label": "fave",
+      "icon": "sports-medal_1f3c5.png"
     }
   ]
 }
