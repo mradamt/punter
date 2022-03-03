@@ -8,8 +8,6 @@ import db from '../fauxdb.json'
 
 export default function App() {
   const [data, setData] = useState(db.posts)
-
-  console.log('state:', data);
   
   const savePost = (post) => {
     setData([post, ...data])
