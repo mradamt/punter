@@ -4,6 +4,8 @@ import Reaction from './Reaction';
 import './sass-styles/Post.scss'
 
 export default function Post (props) {
+  const calculateAge = ms => Math.floor((Date.now() - ms) / 1000 / 60 / 60 / 24)
+
   const reactionsArray = props.reactionCounts.map((count, index) => {
     return <Reaction 
       count={count} 
@@ -20,9 +22,8 @@ export default function Post (props) {
           {reactionsArray}
         </div>
         <div className='author'>
-          <span>
-            Posted by '{props.author}' on '{props.timestamp}'
-          </span>
+          <div>'{props.author}'</div>
+          <div>{calculateAge(props.timestamp)} days ago</div>
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@
       "reaction_counts": [1,1,4,5,1],
       "created_by": {
         "author": "AAA",
-        "timestamp": 100000
+        "timestamp": 1643000000000
       }
     },
     {
@@ -19,7 +19,7 @@
       "reaction_counts": [1,1,4,5,1],
       "created_by": {
         "author": "author a",
-        "timestamp": 100001
+        "timestamp": 1642000000000
       }
     },
     {
@@ -30,7 +30,7 @@
       "reaction_counts": [1,1,4,5,1],
       "created_by": {
         "author": "author b",
-        "timestamp": 100002
+        "timestamp": 1641000000000
       }
     },
     {
@@ -41,7 +41,7 @@
       "reaction_counts": [1,1,4,5,1],
       "created_by": {
         "author": "author a",
-        "timestamp": 100003
+        "timestamp": 1640000000000
       }
     }
   ],
