@@ -3,12 +3,22 @@
   width: 6em;
   .reaction-count {
     font-weight: bold;
+    z-index: 2;
   }
   .reaction-icon img {
-    height: 3em;
-    width: 3em;
+    height: 2em;
+    width: 2em;
+    z-index: 1;
   }
   .reaction-label {
     color: grey;
+  }
+}
+.reaction:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  .reaction-icon {
+    transform: scale(1.3);
+    transition: transform 0.1s;
   }
 }
