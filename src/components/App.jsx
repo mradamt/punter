@@ -13,11 +13,24 @@ export default function App() {
     setData([post, ...data])
   }
 
+  const toggleReaction = (i, add) => {
+    console.log('reaction to post', i);
+    // const nPost = {...data[i]}
+    // let nReactionCounts = [...nPost.reaction_counts];
+    // nReactionCounts[i] += add ? 1 : -1;
+    // nPost.reaction_counts = nReactionCounts
+    // savePost(nPost);
+  }
+
   return (
     <main className='App'>
       <Form savePost={savePost}/>
       <Filters />
-      <Posts posts={data} reactionTypes={db.reaction_types}/>
+      <Posts 
+        posts={data} 
+        reactionTypes={db.reaction_types}
+        toggleReaction={toggleReaction}
+      />
     </main>
   );
 }

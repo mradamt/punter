@@ -11,6 +11,7 @@ export default function Post (props) {
       count={count} 
       icon={props.reactionTypes[index].icon}
       label={props.reactionTypes[index].label}
+      onClick={() => props.toggleReaction(index, true)}
     />
   })
 

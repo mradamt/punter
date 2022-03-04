@@ -3,7 +3,7 @@ import './sass-styles/Reaction.scss';
 
 export default function Reaction (props) {
   return (
-    <div className='reaction'>
+    <button className='reaction' onClick={props.onClick}>
       <div className="reaction-count">
         {props.count}
       </div>
@@ -13,6 +13,6 @@ export default function Reaction (props) {
       <div className="reaction-label">
         {props.label}
       </div>
-    </div>
+    </button>
   )
 }
