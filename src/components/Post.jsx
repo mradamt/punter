@@ -12,6 +12,7 @@ export default function Post (props) {
       icon={props.reactionTypes[index].icon}
       label={props.reactionTypes[index].label}
       onClick={() => props.toggleReaction(props.postIndex, index)}
+      isReaction={props.userReaction===index}
     />
   })
 

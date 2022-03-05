@@ -8,8 +8,9 @@ export default function Posts(props) {
     key={index}
     postIndex={index}
     content={post.content}  
-    reactionTypes={props.reactionTypes}
+    userReaction={post.user_reaction}
     reactionCounts={post.reaction_counts}
+    reactionTypes={props.reactionTypes}
     toggleReaction={props.toggleReaction}
     author={post.created_by.author}
     timestamp={post.created_by.timestamp}

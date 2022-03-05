@@ -1,9 +1,12 @@
 import React from "react";
+import classNames from "classnames";
 import './sass-styles/Reaction.scss';
 
 export default function Reaction (props) {
+  const reactionClass = classNames('reaction', {'reaction--highlight': props.isReaction})
+
   return (
-    <button className='reaction' onClick={props.onClick}>
+    <button className={reactionClass} onClick={props.onClick}>
       <div className="reaction-count">
         {props.count}
       </div>
