@@ -14,17 +14,23 @@ export default function App() {
   }
 
   const toggleReaction = (postIndex, reactionIndex) => {
-    const post = {...data[postIndex]}
-    // Update reaction_counts array: -1 at index of prev user's reaction if not null
-    if (post.user_reaction) {
-      post.reaction_counts[post.user_reaction] -= 1
-    }
-    // Update reaction_counts array: +1 at index just clicked by user
-    post.reaction_counts[reactionIndex] += 1
-    // Update user_reaction to index just clicked
-    post.user_reaction = reactionIndex
-    
     const nData = [...data]
+    const post = nData[postIndex]
+    let uR = post.user_reaction;
+    // If user_reaction is a number, -1 at reactionIndex of reaction_counts array
+    if (uR >= 0) {
+      post.reaction_counts[uR] -= 1
+    }
+    // If prev user_reaction == reactionIndex, toggle reaction to null
+    if (uR === reactionIndex) {
+      post.user_reaction = null
+    } else {
+      // +1 at reactionIndex of reaction_counts array
+      post.reaction_counts[reactionIndex] += 1
+      // Update user_reaction to index just clicked
+      post.user_reaction = reactionIndex
+    }
+    
     nData[postIndex] = post
     setData(nData)
   }
