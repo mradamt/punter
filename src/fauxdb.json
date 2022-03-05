@@ -5,7 +5,8 @@
         "text": "placeholder post 0",
         "prompt": "prompt placeholder"
       },
-      "reaction_counts": [1,1,4,5,1],
+      "user_reaction": null,
+      "reaction_counts": [0,0,0,0,0],
       "created_by": {
         "author": "AAA",
         "timestamp": 1643000000000
@@ -16,7 +17,8 @@
         "text": "placeholder post 1",
         "prompt": "prompt placeholder"
       },
-      "reaction_counts": [1,1,4,5,1],
+      "user_reaction": null,
+      "reaction_counts": [0,0,0,0,0],
       "created_by": {
         "author": "author a",
         "timestamp": 1642000000000
@@ -27,7 +29,8 @@
         "text": "placeholder post 2",
         "prompt": "prompt placeholder"
       },
-      "reaction_counts": [1,1,4,5,1],
+      "user_reaction": null,
+      "reaction_counts": [0,0,0,0,0],
       "created_by": {
         "author": "author b",
         "timestamp": 1641000000000
@@ -38,7 +41,8 @@
         "text": "placeholder post 3",
         "prompt": "prompt placeholder"
       },
-      "reaction_counts": [1,1,4,5,1],
+      "user_reaction": null,
+      "reaction_counts": [0,0,0,0,0],
       "created_by": {
         "author": "author a",
         "timestamp": 1640000000000
