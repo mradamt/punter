@@ -37,9 +37,10 @@ export default function App() {
 
   return (
     <main className='App'>
+      ##info icon w collapsable plea to not abuse an app with no auth##
       <Form savePost={savePost}/>
       <Filters />
-      <Posts 
+      <Posts
         posts={data} 
         reactionTypes={db.reaction_types}
         toggleReaction={toggleReaction}
