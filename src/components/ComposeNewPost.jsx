@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button'
+import {Form, Button, Row, Col} from 'react-bootstrap';
 
 // import './sass-styles/Form.scss'
 
 export default function ComposeNewPost (props) {
   const [text, setText] = useState('')
   const [prompt, setPrompt] = useState('If puns were given the respect they deserve,')
-  const [author, setAuthor] = useState('TED')
-
-  const username = "ABC"
+  const [author, setAuthor] = useState('ABC')
 
   const formatPost = (text, prompt, author) => {
      return (
@@ -45,18 +42,15 @@ export default function ComposeNewPost (props) {
   return (
     <section className='submission-form'>
       <Form action='/posts' method='POST' onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="newPost.ControlTextarea1">
+        <Form.Group className="mb-3 px-1" controlId="newPost.ControlTextarea1">
           <Form.Label>{prompt}</Form.Label>
-          <Form.Control as="textarea" rows={2} />
+          <Form.Control 
+            as="textarea" 
+            placeholder={"there'd be a company that..."} 
+            rows={2} 
+          />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="newPost.UserName">
-          <Form.Label>Author</Form.Label>
-          <Form.Control plaintext readOnly defaultValue={username} rows={2} />
-        </Form.Group>
-
-
-        
-        <Button as="input" type="submit" value="Submit" size='lg'/>{' '}
+        <Button as="input" type="submit" value="Submit"/>{' '}
       </Form>
     </section>
   )
