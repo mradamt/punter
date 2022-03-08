@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Posts from './Posts';
-import Form from './Form';
+import ComposeNewPost from './ComposeNewPost';
 import Filters from './Filters';
 import './sass-styles/App.scss';
 
@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     <main className='App'>
-      <Form savePost={savePost}/>
+      <ComposeNewPost savePost={savePost}/>
       <Filters />
       <Posts 
         posts={data} 

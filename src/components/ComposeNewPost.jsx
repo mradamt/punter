@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button'
+
 import './sass-styles/Form.scss'
 
-export default function Form (props) {
+export default function ComposeNewPost (props) {
   const [text, setText] = useState('')
   const [prompt, setPrompt] = useState('If puns were given the respect they deserve,')
   const [author, setAuthor] = useState('TED')
@@ -23,7 +26,7 @@ export default function Form (props) {
   }
 
   // Validate text isn't offensive then submit to DB
-  const submitPost = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
     console.log(`post 'posted': ${text}`);
     // validate post
@@ -39,7 +42,7 @@ export default function Form (props) {
 
   return (
     <section className='submission-form'>
-      <form action='/posts' method='POST' onSubmit={submitPost}>
+      <Form action='/posts' method='POST' onSubmit={handleSubmit}>
         <div className='prompt'>
           {prompt}
           <span className='submission-form-text'>
@@ -57,8 +60,8 @@ export default function Form (props) {
             placeholder={author}
           />
         </span>
-        <button type='submit'>Post</button>
-      </form>
+        <Button type='submit'>Most</Button>
+      </Form>
     </section>
   )
 }
