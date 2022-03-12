@@ -71,8 +71,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### App notes
 
-Single page app
-An exercise in React app development with some complexity deliberately added esp. for the DB
-Does not have any user auth
-Minimal styling
+Pun-centered, twitter-like single page app
+An exercise in React front end development and Express + Postgres backend development with an attempt at some artificial DB complexity
+Deliberately basic user auth, 3 letter username and password is user's first name
+Minimal energy put into styling
 Goal is to look tidy and provide at least one reluctant ha reaction, or better, via content
