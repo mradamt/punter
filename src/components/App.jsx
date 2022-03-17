@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Posts from './Posts';
 import Form from './Form';
@@ -7,13 +7,23 @@ import './sass-styles/App.scss';
 
 import db from '../fauxdb.json'
 
-axios.get('/users')
-  .then(res => {
-    console.log(res.data);
-  })
-
 export default function App() {
   const [data, setData] = useState(db.posts)
+  const [reactionTypes, setReactionTypes] = useState(db.reaction_types)
+  
+  useEffect(() => {
+    console.log('useEffect executing...');
+    axios.get('/api/reaction_types')
+      .then(res => {
+        setReactionTypes(res.data);
+        console.log('future:', res.data);
+      })
+      .catch(err => {
+        console.log('Yarrr error be:', err);
+      })
+  }, [])
+
+  console.log('current:', db.reaction_types);
   
   const savePost = (post) => {
     setData([post, ...data])
@@ -48,9 +58,11 @@ export default function App() {
       <Filters />
       <Posts
         posts={data} 
-        reactionTypes={db.reaction_types}
+        reactionTypes={reactionTypes}
         toggleReaction={toggleReaction}
       />
+      <div>reaction types:</div>
+      <div>{reactionTypes[0].label}</div>
     </main>
   );
 }
