@@ -6,11 +6,13 @@ import './sass-styles/Post.scss'
 export default function Post (props) {
   const calculateAge = ms => Math.floor((Date.now() - ms) / 1000 / 60 / 60 / 24)
 
+  // NOTE reactionCounts and reactionTypes arrays must be equal length
+  // else map function will fail and app will not display
   const reactionsArray = props.reactionCounts.map((count, index) => {
     return <Reaction 
       count={count} 
-      icon={props.reactionTypes[index].icon}
-      label={props.reactionTypes[index].label}
+      icon={props.reactionTypes[index] ? props.reactionTypes[index].icon : 'null'}
+      label={props.reactionTypes[index] ? props.reactionTypes[index].label : 'null'}
       onClick={() => props.toggleReaction(props.postIndex, index)}
       isReaction={props.userReaction===index}
     />

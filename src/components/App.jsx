@@ -9,21 +9,17 @@ import db from '../fauxdb.json'
 
 export default function App() {
   const [data, setData] = useState(db.posts)
-  const [reactionTypes, setReactionTypes] = useState(db.reaction_types)
+  const [reactionTypes, setReactionTypes] = useState([{}])
   
   useEffect(() => {
-    console.log('useEffect executing...');
     axios.get('/api/reaction_types')
       .then(res => {
         setReactionTypes(res.data);
-        console.log('future:', res.data);
       })
       .catch(err => {
-        console.log('Yarrr error be:', err);
+        console.log(err);
       })
   }, [])
-
-  console.log('current:', db.reaction_types);
   
   const savePost = (post) => {
     setData([post, ...data])
@@ -61,8 +57,6 @@ export default function App() {
         reactionTypes={reactionTypes}
         toggleReaction={toggleReaction}
       />
-      <div>reaction types:</div>
-      <div>{reactionTypes[0].label}</div>
     </main>
   );
 }
