@@ -1,10 +1,16 @@
 import { useState } from 'react';
+import axios from 'axios';
 import Posts from './Posts';
 import Form from './Form';
 import Filters from './Filters';
 import './sass-styles/App.scss';
 
 import db from '../fauxdb.json'
+
+axios.get('/users')
+  .then(res => {
+    console.log(res.data);
+  })
 
 export default function App() {
   const [data, setData] = useState(db.posts)
