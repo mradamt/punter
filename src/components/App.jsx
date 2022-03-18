@@ -24,9 +24,14 @@ export default function App() {
         console.log(err);
       })
   }, [])
-  
   const savePost = (post) => {
-    setData([post, ...data])
+    return axios.post(`/api/posts`, post)
+    .then(() => {
+      setData([post, ...data])
+    })
+    .catch(err => {
+      console.log(err);
+    })
   }
 
   const toggleReaction = (postIndex, reactionIndex) => {
