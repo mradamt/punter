@@ -24,7 +24,12 @@ export default function App() {
         console.log(err);
       })
   }, [])
+
   const savePost = (post) => {
+    // Check for spicy language in post text
+    // Insert form data into db-friendly format
+    // POST new post to db
+    // .then Add full post entry to local state
     return axios.post(`/api/posts`, post)
     .then(() => {
       setData([post, ...data])
