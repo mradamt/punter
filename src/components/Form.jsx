@@ -13,11 +13,10 @@ export default function Form (props) {
           "text": text,
           "prompt": prompt
         },
+        "user_reaction": null,
         "reaction_counts": [0,0,0,0,0],
-        "created_by": {
-          "author": author,
-          "timestamp": Date.now()
-        }
+        "author": author,
+        "creation_date": Date.now()
       }
      )
   }
