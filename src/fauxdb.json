@@ -1,17 +1,32 @@
 {
   "posts": [
     {
-      "content": {
+      "post": {
+        "id": 1,
         "text": "placeholder post 0",
-        "prompt": "prompt placeholder"
+        "spicy_language": false,
+        "created_on": "2022-01-01 09:00:00-00Z"
       },
-      "user_reaction": null,
-      "reaction_counts": [0,0,0,0,0],
-      "created_by": {
-        "author": "AAA",
-        "timestamp": 1643000000000
-      }
+      "prompt": {
+        "id": 1,
+        "text": "prompt placeholder"
+      },
+      "user": {
+        "id": 1,
+        "username": "ABC",
+        "reaction": null
+      },
+      "reactions": [
+        {
+          "id": 0,
+          "label":"hard no",
+          "icon":"face-with-rolling-eyes_1f644.png",
+          "count": 5
+        }
+      ]
     },
+
+
     {
       "content": {
         "text": "placeholder post 1",
