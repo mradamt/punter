@@ -16,7 +16,7 @@ export default function Form (props) {
         "user_reaction": null,
         "reaction_counts": [0,0,0,0,0],
         "author": author,
-        "creation_date": Date.now()
+        "creation_date": new Date()
       }
      )
   }
