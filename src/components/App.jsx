@@ -8,8 +8,8 @@ import './sass-styles/App.scss';
 import db from '../fauxdb.json'
 
 export default function App() {
-  const [data, setData] = useState(db.posts)
-  const [reactionTypes, setReactionTypes] = useState([{}])
+  const [data, setData] = useState()
+  const [reactionTypes, setReactionTypes] = useState()
   
   useEffect(() => {
     Promise.all([
@@ -18,7 +18,6 @@ export default function App() {
     ])
       .then(([posts, reaction_types]) => {
         setData(posts.data);
-        // console.log(posts.data);
         setReactionTypes(reaction_types.data);
       })
       .catch(err => {
@@ -57,11 +56,11 @@ export default function App() {
       ##info icon w collapsable plea to not abuse an app with no auth##
       <Form savePost={savePost}/>
       <Filters />
-      <Posts
+      {data && reactionTypes && <Posts
         posts={data} 
         reactionTypes={reactionTypes}
         toggleReaction={toggleReaction}
-      />
+      />}
     </main>
   );
 }
