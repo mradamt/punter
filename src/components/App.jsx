@@ -12,9 +12,14 @@ export default function App() {
   const [reactionTypes, setReactionTypes] = useState([{}])
   
   useEffect(() => {
-    axios.get('/api/reaction_types')
-      .then(res => {
-        setReactionTypes(res.data);
+    Promise.all([
+      axios.get('/api/posts'),
+      axios.get('/api/reaction_types')
+    ])
+      .then(([posts, reaction_types]) => {
+        setData(posts.data);
+        // console.log(posts.data);
+        setReactionTypes(reaction_types.data);
       })
       .catch(err => {
         console.log(err);

@@ -4,6 +4,7 @@ import Reaction from './Reaction';
 import './sass-styles/Post.scss'
 
 export default function Post (props) {
+  // calculateAge accepts timestamp as milliseconds or new Date() object, returns age in days
   const calculateAge = ms => Math.floor((Date.now() - ms) / 1000 / 60 / 60 / 24)
 
   // NOTE reactionCounts and reactionTypes arrays must be equal length
@@ -27,7 +28,7 @@ export default function Post (props) {
         </div>
         <div className='author'>
           <div>'{props.author}'</div>
-          <div>{calculateAge(props.timestamp)} days ago</div>
+          <div>{calculateAge(new Date(String(props.creation_date)))} days ago</div>
         </div>
       </div>
     </div>

@@ -12,8 +12,8 @@ export default function Posts(props) {
     reactionCounts={post.reaction_counts}
     reactionTypes={props.reactionTypes}
     toggleReaction={props.toggleReaction}
-    author={post.created_by.author}
-    timestamp={post.created_by.timestamp}
+    author={post.author}
+    creation_date={post.creation_date}
   />)
 
   return (
