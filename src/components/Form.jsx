@@ -6,36 +6,13 @@ export default function Form (props) {
   const [prompt, setPrompt] = useState('If puns were given the respect they deserve,')
   const [author, setAuthor] = useState('TED')
 
-  const formatPost = (text, prompt, author) => {
-     return (
-      {
-        "content": {
-          "text": text,
-          "prompt": prompt
-        },
-        "user_reaction": null,
-        "reaction_counts": [0,0,0,0,0],
-        "author": author,
-        "creation_date": new Date()
-      }
-     )
-  }
-
-  // Validate text isn't offensive then submit to DB
+  // Trigger savePost function on (text, prompt) and clear form's textbox
   const submitPost = (event) => {
     event.preventDefault()
-    console.log(`post 'posted': ${text}`);
-    // validate post
-    // verify post
-    // execute 'add post' function to add to main state
-    props.savePost(formatPost(text, prompt, author))
-    setText('')
+    props.savePost(text, prompt)
+    // setText('')
   }
-
-  // Validate author (check availability, offensiveness)
-
-  // Submit new prompt -- future
-
+  
   return (
     <section className='submission-form'>
       <form action='/posts' method='POST' onSubmit={submitPost}>
