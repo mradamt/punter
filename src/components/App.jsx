@@ -25,6 +25,10 @@ export default function App() {
       })
   }, [])
 
+  // checkForUnprofessionalLanguage, return true if spicy language present
+
+  // convertToServerReadableFormat function that outputs data in format server is expecting
+
   const savePost = (post) => {
     // Check for spicy language in post text
     // Insert form data into db-friendly format
