@@ -1,92 +1,68 @@
 {
   "posts": [
     {
-      "post": {
-        "id": 1,
-        "text": "placeholder post 0",
-        "spicy_language": false,
-        "created_on": "2022-01-01 09:00:00-00Z"
-      },
-      "prompt": {
-        "id": 1,
-        "text": "prompt placeholder"
-      },
-      "user": {
-        "id": 1,
-        "username": "ABC",
-        "reaction": null
-      },
-      "reactions": [
-        {
-          "id": 0,
-          "label":"hard no",
-          "icon":"face-with-rolling-eyes_1f644.png",
-          "count": 5
-        }
-      ]
-    },
-
-
-    {
-      "content": {
-        "text": "placeholder post 1",
-        "prompt": "prompt placeholder"
-      },
-      "user_reaction": null,
-      "reaction_counts": [0,0,0,0,0],
-      "created_by": {
-        "author": "author a",
-        "timestamp": 1642000000000
-      }
+      "id": 1,
+      "author": {"id": 1, "username": "ABC"},
+      "prompt": {"id": 1, "text": "prompt placeholder"},
+      "text": "placeholder post 0",
+      "spicy_language": false,
+      "my_reaction": null,
+      "reaction_counts": [11, 22, 33, 44, 55],
+      "hidden": false,
+      "created_on": "2022-03-19T23:17:47.789Z"
     },
     {
-      "content": {
-        "text": "placeholder post 2",
-        "prompt": "prompt placeholder"
-      },
-      "user_reaction": null,
-      "reaction_counts": [0,0,0,0,0],
-      "created_by": {
-        "author": "author b",
-        "timestamp": 1641000000000
-      }
+      "id": 4,
+      "author": {"id": 1, "username": "ABC"},
+      "prompt": {"id": 1, "text": "prompt placeholder"},
+      "text": "placeholder post 0",
+      "spicy_language": false,
+      "my_reaction": null,
+      "reaction_counts": [11, 22, 33, 44, 55],
+      "hidden": false,
+      "created_on": "2022-03-19T23:16:47.789Z"
     },
     {
-      "content": {
-        "text": "placeholder post 3",
-        "prompt": "prompt placeholder"
-      },
-      "user_reaction": null,
-      "reaction_counts": [0,0,0,0,0],
-      "created_by": {
-        "author": "author a",
-        "timestamp": 1640000000000
-      }
+      "id": 3,
+      "author": {"id": 1, "username": "ABC"},
+      "prompt": {"id": 1, "text": "prompt placeholder"},
+      "text": "placeholder post 0",
+      "spicy_language": false,
+      "my_reaction": null,
+      "reaction_counts": [11, 22, 33, 44, 55],
+      "hidden": false,
+      "created_on": "2022-03-19T23:15:47.789Z"
+    },
+    {
+      "id": 2,
+      "author": {"id": 1, "username": "ABC"},
+      "prompt": {"id": 1, "text": "prompt placeholder"},
+      "text": "placeholder post 0",
+      "spicy_language": false,
+      "my_reaction": null,
+      "reaction_counts": [11, 22, 33, 44, 55],
+      "hidden": false,
+      "created_on": "2022-03-19T23:14:47.789Z"    
     }
   ],
   "reaction_types": [
     {
-      "index": 0,
       "label": "hard no",
       "icon": "unamused-face_1f612.png"
     },
     {
-      "index": 1,
       "label": "meh",
       "icon": "yawning-face_1f971.png"
     },
     {
-      "index": 2,
       "label": "reluctant ha",
       "icon": "face-with-rolling-eyes_1f644.png"
     },
     {
-      "index": 3,
       "label": "genuine ha",
       "icon": "smiling-face-with-sunglasses_1f60e.png"
     },
     {
-      "index": 4,
       "label": "fave",
       "icon": "sports-medal_1f3c5.png"
     }
