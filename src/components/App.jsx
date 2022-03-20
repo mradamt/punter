@@ -8,8 +8,8 @@ import './sass-styles/App.scss';
 import db from '../fauxdb.json'
 
 export default function App() {
-  const [data, setData] = useState()
-  const [reactionTypes, setReactionTypes] = useState()
+  const [posts, setPosts] = useState(db.posts)
+  const [reactionTypes, setReactionTypes] = useState(db.reaction_types)
   
   // useEffect(() => {
   //   Promise.all([
@@ -44,26 +44,26 @@ export default function App() {
     // })
   }
 
-  const toggleReaction = (postIndex, reactionIndex) => {
-    const nData = [...data]
-    const post = nData[postIndex]
-    let uR = post.user_reaction;
-    // If user_reaction is a number, -1 at reactionIndex of reaction_counts array
-    if (uR >= 0) {
-      post.reaction_counts[uR] -= 1
+  // 
+  const handleReactionCount = (postIndex, newReaction) => {
+    const postsClone = [...posts]
+    const post = postsClone[postIndex]
+    const existingReaction = post.user_reaction;
+    // If user's existing reaction is an index of reaction_counts and that count isn't about to go negative, subtract 1
+    if (existingReaction >= 0 && existingReaction < post.reaction_counts.length && post.reaction_counts[existingReaction] >=1) {
+      post.reaction_counts[existingReaction] =- 1
     }
-    // If prev user_reaction == reactionIndex, toggle reaction to null
-    if (uR === reactionIndex) {
+    // If user has clicked their existing reaction, set it to null
+    if (existingReaction === newReaction) {
       post.user_reaction = null
     } else {
-      // +1 at reactionIndex of reaction_counts array
-      post.reaction_counts[reactionIndex] += 1
-      // Update user_reaction to index just clicked
-      post.user_reaction = reactionIndex
+      // add 1 to count of the reaction just clicked
+      post.reaction_counts[newReaction] += 1
+      // set user's reaction to index of reaction just clicked
+      post.user_reaction = newReaction
     }
-    
-    nData[postIndex] = post
-    setData(nData)
+    postsClone[postIndex] = post
+    setPosts(postsClone)
   }
 
   return (

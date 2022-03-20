@@ -14,7 +14,7 @@ export default function Post (props) {
       count={count} 
       icon={props.reactionTypes[index] ? props.reactionTypes[index].icon : 'null'}
       label={props.reactionTypes[index] ? props.reactionTypes[index].label : 'null'}
-      onClick={() => props.toggleReaction(props.postIndex, index)}
+      onClick={() => props.handleReactionCount(props.postIndex, index)}
       isReaction={props.userReaction===index}
     />
   })
