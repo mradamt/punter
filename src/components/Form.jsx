@@ -3,7 +3,7 @@ import './sass-styles/Form.scss'
 
 export default function Form (props) {
   const [text, setText] = useState('')
-  const [promptId, setPromptId] = useState('If puns were given the respect they deserve,')
+  const [promptId, setPromptId] = useState(props.blankForm.prompt.id)
 
   // Trigger savePost function on (text, prompt) and clear form's textbox
   const submitPost = (event) => {
@@ -16,7 +16,7 @@ export default function Form (props) {
     <section className='submission-form'>
       <form action='/posts' method='POST' onSubmit={submitPost}>
         <div className='prompt'>
-          {props.blankForm.prompt}
+          {props.blankForm.prompt.text}
           <span className='submission-form-text'>
             <input 
               value={text} 
