@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Posts from './Posts';
+import PostsList from './PostsList';
 import Form from './Form';
 import Filters from './Filters';
 import './sass-styles/App.scss';
@@ -71,7 +71,7 @@ export default function App() {
       ##info icon w collapsable plea to not abuse an app with no auth##
       <Form savePost={savePost}/>
       <Filters />
-      {posts && reactionTypes && <Posts
+      {posts && reactionTypes && <PostsList
         posts={posts} 
         reactionTypes={reactionTypes}
         handleReactionCount={handleReactionCount}

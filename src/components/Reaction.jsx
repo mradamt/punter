@@ -2,7 +2,7 @@ import classNames from "classnames";
 import './sass-styles/Reaction.scss';
 
 export default function Reaction (props) {
-  const reactionClass = classNames('reaction', {'reaction--highlight': props.isReaction})
+  const reactionClass = classNames('reaction', {'reaction--highlight': props.isUserReaction})
 
   return (
     <button className={reactionClass} onClick={props.onClick}>
