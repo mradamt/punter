@@ -6,7 +6,7 @@
       "prompt": {"id": 1, "text": "prompt placeholder"},
       "text": "placeholder post 0",
       "spicy_language": false,
-      "my_reaction": null,
+      "user_reaction": null,
       "reaction_counts": [11, 22, 33, 44, 55],
       "hidden": false,
       "created_on": "2022-03-19T23:17:47.789Z"
@@ -17,7 +17,7 @@
       "prompt": {"id": 1, "text": "prompt placeholder"},
       "text": "placeholder post 0",
       "spicy_language": false,
-      "my_reaction": null,
+      "user_reaction": null,
       "reaction_counts": [11, 22, 33, 44, 55],
       "hidden": false,
       "created_on": "2022-03-19T23:16:47.789Z"
@@ -28,7 +28,7 @@
       "prompt": {"id": 1, "text": "prompt placeholder"},
       "text": "placeholder post 0",
       "spicy_language": false,
-      "my_reaction": null,
+      "user_reaction": null,
       "reaction_counts": [11, 22, 33, 44, 55],
       "hidden": false,
       "created_on": "2022-03-19T23:15:47.789Z"
@@ -39,7 +39,7 @@
       "prompt": {"id": 1, "text": "prompt placeholder"},
       "text": "placeholder post 0",
       "spicy_language": false,
-      "my_reaction": null,
+      "user_reaction": null,
       "reaction_counts": [11, 22, 33, 44, 55],
       "hidden": false,
       "created_on": "2022-03-19T23:14:47.789Z"    
