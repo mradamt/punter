@@ -3,7 +3,7 @@ import './sass-styles/Posts.scss';
 
 export default function PostsList(props) {
   // Add reaction types and handleReactionCount function to each PostItem component
-  const postItemArray = props.posts.map((post, index) => {
+  const postItemArray = props.postsList.map((post, index) => {
     return (
       <PostItem
         key={index}

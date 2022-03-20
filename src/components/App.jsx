@@ -6,6 +6,7 @@ import Filters from './Filters';
 import './sass-styles/App.scss';
 
 import db from '../fauxdb.json'
+// import templates from '../templates/datastructureTemplates.json'
 
 export default function App() {
   const [postsList, setPostsList] = useState(db.posts)
@@ -20,7 +21,7 @@ export default function App() {
       "text": null,
       "creation_date": null
   })
-  
+
   // useEffect(() => {
   //   Promise.all([
   //     axios.get('/api/posts'),
@@ -56,7 +57,7 @@ export default function App() {
     // })
   }
 
-  // 
+  // Manage reaction counts and user's reaction when a reaction is clicked
   const handleReactionCount = (postIndex, newReaction) => {
     const postsClone = [...postsList]
     const post = postsClone[postIndex]
@@ -78,7 +79,6 @@ export default function App() {
     setPostsList(postsClone)
   }
 
-  
   return (
     <main className='App'>
       ##info icon w collapsable plea to not abuse an app with no auth##
