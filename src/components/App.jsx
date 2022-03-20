@@ -11,36 +11,37 @@ export default function App() {
   const [data, setData] = useState()
   const [reactionTypes, setReactionTypes] = useState()
   
-  useEffect(() => {
-    Promise.all([
-      axios.get('/api/posts'),
-      axios.get('/api/reaction_types')
-    ])
-      .then(([posts, reaction_types]) => {
-        setData(posts.data);
-        setReactionTypes(reaction_types.data);
-      })
-      .catch(err => {
-        console.log(err);
-      })
-  }, [])
+  // useEffect(() => {
+  //   Promise.all([
+  //     axios.get('/api/posts'),
+  //     axios.get('/api/reaction_types')
+  //   ])
+  //     .then(([posts, reaction_types]) => {
+  //       setPosts(posts.data);
+  //       setReactionTypes(reaction_types.data);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     })
+  // }, [])
 
   // checkForUnprofessionalLanguage, return true if spicy language present
 
   // convertToServerReadableFormat function that outputs data in format server is expecting
 
-  const savePost = (post) => {
+  const savePost = (newPost) => {
     // Check for spicy language in post text
     // Insert form data into db-friendly format
     // POST new post to db
     // .then Add full post entry to local state
-    return axios.post(`/api/posts`, post)
-    .then(() => {
-      setData([post, ...data])
-    })
-    .catch(err => {
-      console.log(err);
-    })
+    setPosts([newPost, ...posts])
+    // return axios.post(`/api/posts`, post)
+    // .then(() => {
+    //   setPosts([newPost, ...posts])
+    // })
+    // .catch(err => {
+    //   console.log(err);
+    // })
   }
 
   const toggleReaction = (postIndex, reactionIndex) => {
@@ -70,10 +71,10 @@ export default function App() {
       ##info icon w collapsable plea to not abuse an app with no auth##
       <Form savePost={savePost}/>
       <Filters />
-      {data && reactionTypes && <Posts
-        posts={data} 
+      {posts && reactionTypes && <Posts
+        posts={posts} 
         reactionTypes={reactionTypes}
-        toggleReaction={toggleReaction}
+        handleReactionCount={handleReactionCount}
       />}
     </main>
   );
