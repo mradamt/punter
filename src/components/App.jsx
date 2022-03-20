@@ -8,7 +8,7 @@ import './sass-styles/App.scss';
 import db from '../fauxdb.json'
 
 export default function App() {
-  const [posts, setPosts] = useState(db.posts)
+  const [postsList, setPostsList] = useState(db.posts)
   const [reactionTypes, setReactionTypes] = useState(db.reaction_types)
   
   // useEffect(() => {
@@ -34,10 +34,10 @@ export default function App() {
     // Insert form data into db-friendly format
     // POST new post to db
     // .then Add full post entry to local state
-    setPosts([newPost, ...posts])
+    setPostsList([newPost, ...postsList])
     // return axios.post(`/api/posts`, post)
     // .then(() => {
-    //   setPosts([newPost, ...posts])
+    //   setPostsList([newPost, ...postsList])
     // })
     // .catch(err => {
     //   console.log(err);
@@ -46,7 +46,7 @@ export default function App() {
 
   // 
   const handleReactionCount = (postIndex, newReaction) => {
-    const postsClone = [...posts]
+    const postsClone = [...postsList]
     const post = postsClone[postIndex]
     const existingReaction = post.user_reaction;
     // If user's existing reaction is an index of reaction_counts and that count isn't about to go negative, subtract 1
@@ -63,7 +63,7 @@ export default function App() {
       post.user_reaction = newReaction
     }
     postsClone[postIndex] = post
-    setPosts(postsClone)
+    setPostsList(postsClone)
   }
 
   return (
@@ -71,8 +71,8 @@ export default function App() {
       ##info icon w collapsable plea to not abuse an app with no auth##
       <Form savePost={savePost}/>
       <Filters />
-      {posts && reactionTypes && <PostsList
-        posts={posts} 
+      {postsList && reactionTypes && <PostsList
+        postsList={postsList} 
         reactionTypes={reactionTypes}
         handleReactionCount={handleReactionCount}
       />}
