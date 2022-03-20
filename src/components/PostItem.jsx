@@ -7,21 +7,21 @@ export default function Post ({post, reactionTypes, handleReactionCount}) {
   const calculateAge = ms => Math.floor((Date.now() - ms) / 1000 / 60 / 60 / 24)
 
   // Combine reaction counts and types into an array of Reaction components
-  // const reactionArray = post.reactionCounts.map((count, index) => {
-  //   // Return simple error if reaction arrays are not equal length
-  //   if (post.reactionCounts.length !== reactionTypes.length) {
-  //     return "<div>Error</div>"
-  //   }
-  //   return (
-  //     <Reaction 
-  //       count={count} 
-  //       icon={reactionTypes[index].icon}
-  //       label={reactionTypes[index].label}
-  //       onClick={() => handleReactionCount(post, index)}
-  //       isUserReaction={post.userReaction===index}
-  //     />
-  //   )
-  // })
+  const reactionArray = post.reaction_counts.map((count, index) => {
+    // Return simple error if reaction arrays are not equal length
+    if (post.reaction_counts.length !== reactionTypes.length) {
+      return "<div>Error</div>"
+    }
+    return (
+      <Reaction 
+        count={count} 
+        icon={reactionTypes[index].icon}
+        label={reactionTypes[index].label}
+        onClick={() => handleReactionCount(post, index)}
+        isUserReaction={post.userReaction===index}
+      />
+    )
+  })
 
   return (
     <div className='post'>
@@ -34,7 +34,7 @@ export default function Post ({post, reactionTypes, handleReactionCount}) {
       </div>
       <div className='metadata'>
         <div className='reactions'>
-          {"reactionArray"}
+          {reactionArray}
         </div>
         <div className='author'>
           <div>'{post.author.username}'</div>
