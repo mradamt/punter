@@ -10,15 +10,27 @@ import db from '../fauxdb.json'
 export default function App() {
   const [postsList, setPostsList] = useState(db.posts)
   const [reactionTypes, setReactionTypes] = useState(db.reaction_types)
+  const [prompts, setPrompts] = useState(db.prompts)
+  const [blankForm, setBlankForm] = useState({
+      "author": {
+        "id": 10, // logged in user_id
+        "username": "TED" // logged in username
+      },
+      "prompt": prompts[0],
+      "text": null,
+      "creation_date": null
+  })
   
   // useEffect(() => {
   //   Promise.all([
   //     axios.get('/api/posts'),
   //     axios.get('/api/reaction_types')
+  //     axios.get('/api/prompts')
   //   ])
-  //     .then(([posts, reaction_types]) => {
+  //     .then(([posts, reaction_types, prompts]) => {
   //       setPosts(posts.data);
   //       setReactionTypes(reaction_types.data);
+  //       setPrompts(prompts.data);
   //     })
   //     .catch(err => {
   //       console.log(err);
@@ -66,10 +78,15 @@ export default function App() {
     setPostsList(postsClone)
   }
 
+  
   return (
     <main className='App'>
       ##info icon w collapsable plea to not abuse an app with no auth##
-      <Form savePost={savePost}/>
+      <Form 
+        prompts={prompts} // TODO:: replace 'null' w array of 'prompt' objects
+        blankForm={blankForm}
+        savePost={savePost}
+      />
       <Filters />
       {postsList && reactionTypes && <PostsList
         postsList={postsList} 

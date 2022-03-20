@@ -66,5 +66,11 @@
       "label": "fave",
       "icon": "sports-medal_1f3c5.png"
     }
+  ],
+  "prompts": [
+    {
+      "id": 1,
+      "prompt": "If puns were given the respect they deserve"
+    }
   ]
 }
