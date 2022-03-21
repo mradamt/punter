@@ -12,14 +12,11 @@ export default function App() {
   const [postsList, setPostsList] = useState(db.posts)
   const [reactionTypes, setReactionTypes] = useState(db.reaction_types)
   const [prompts, setPrompts] = useState(db.prompts)
-  const [blankForm, setBlankForm] = useState({
+  const [author, setAuthor] = useState({
       "author": {
         "id": 10, // logged in user_id
         "username": "TED" // logged in username
-      },
-      "prompt": prompts[0],
-      "text": null,
-      "creation_date": null
+      }
   })
 
   // useEffect(() => {
@@ -84,7 +81,7 @@ export default function App() {
       ##info icon w collapsable plea to not abuse an app with no auth##
       <Form 
         prompts={prompts} // TODO:: replace 'null' w array of 'prompt' objects
-        blankForm={blankForm}
+        author={author}
         savePost={savePost}
       />
       <Filters />

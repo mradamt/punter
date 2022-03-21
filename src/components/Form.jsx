@@ -3,12 +3,12 @@ import './sass-styles/Form.scss'
 
 export default function Form (props) {
   const [text, setText] = useState('')
-  const [promptId, setPromptId] = useState(props.blankForm.prompt.id)
+  const [prompt, setPrompt] = useState(props.prompts[0])
 
   // Trigger savePost function on (text, prompt) and clear form's textbox
   const submitPost = (event) => {
     event.preventDefault()
-    props.savePost(text, promptId)
+    props.savePost(text, prompt.id)
     // setText('')
   }
 
@@ -16,7 +16,7 @@ export default function Form (props) {
     <section className='submission-form'>
       <form action='/posts' method='POST' onSubmit={submitPost}>
         <div className='prompt'>
-          {props.blankForm.prompt.text}
+          {prompt.text}
           <span className='submission-form-text'>
             <input 
               value={text} 
@@ -26,7 +26,7 @@ export default function Form (props) {
           </span>
         </div>
         <span className='submission-form-author'>
-          {props.blankForm.author.username}
+          {props.author.author.username}
         </span>
         <button type='submit'>Post</button>
       </form>
