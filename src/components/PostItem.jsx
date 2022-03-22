@@ -23,7 +23,7 @@ export default function Post ({post, reactionTypes, handleReactionCount, prompts
     )
   })
 
-  console.log('post.prompt_text:', post.prompt_text);
+  // console.log('post.prompt_text:', post.prompt_text);
 
   return (
     <div className='post'>

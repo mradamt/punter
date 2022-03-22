@@ -21,13 +21,14 @@ export default function App() {
 
   useEffect(() => {
     Promise.all([
-      axios.get('/api/posts'),
+      // axios.get('/api/posts'),
       // axios.get('/api/reaction_types'),
-      // axios.get('/api/prompts')
+      // axios.get('/api/prompts'),
+      // axios.get(`/api/user_reactions/1`)
     ])
-      .then(([posts]) => {
-        console.log(posts.data[0]);
-        setPostsList(posts.data);
+      .then(([response]) => {
+        console.log('server response:', response.data);
+        // setPostsList(posts.data);
         // setReactionTypes(reaction_types.data);
         // setPrompts(prompts.data);
       })
@@ -79,7 +80,7 @@ export default function App() {
     setPostsList(postsListClone)
   }
 
-  console.log('prompts:', prompts);
+  // console.log('prompts:', prompts);
 
   return (
     <main className='App'>
