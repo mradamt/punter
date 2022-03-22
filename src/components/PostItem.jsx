@@ -2,7 +2,7 @@ import Content from './Content';
 import Reaction from './Reaction';
 import './sass-styles/Post.scss'
 
-export default function Post ({post, postItemIndex, reactionTypes, handleReactionCount}) {
+export default function Post ({post, reactionTypes, handleReactionCount, prompts}) {
   // calculateAge accepts timestamp as milliseconds or new Date() object, returns age in days
   const calculateAge = ms => Math.floor((Date.now() - ms) / 1000 / 60 / 60 / 24)
 
@@ -23,11 +23,13 @@ export default function Post ({post, postItemIndex, reactionTypes, handleReactio
     )
   })
 
+  console.log('post.prompt_text:', post.prompt_text);
+
   return (
     <div className='post'>
       <div className="content">
         <p className="content-text">
-          {post.prompt.text}
+          {post.prompt_text}
           <br />
           {post.text}
         </p>

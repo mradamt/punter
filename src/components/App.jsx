@@ -19,21 +19,22 @@ export default function App() {
       }
   })
 
-  // useEffect(() => {
-  //   Promise.all([
-  //     axios.get('/api/posts'),
-  //     axios.get('/api/reaction_types')
-  //     axios.get('/api/prompts')
-  //   ])
-  //     .then(([posts, reaction_types, prompts]) => {
-  //       setPosts(posts.data);
-  //       setReactionTypes(reaction_types.data);
-  //       setPrompts(prompts.data);
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     })
-  // }, [])
+  useEffect(() => {
+    Promise.all([
+      axios.get('/api/posts'),
+      // axios.get('/api/reaction_types'),
+      // axios.get('/api/prompts')
+    ])
+      .then(([posts]) => {
+        console.log(posts.data[0]);
+        setPostsList(posts.data);
+        // setReactionTypes(reaction_types.data);
+        // setPrompts(prompts.data);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }, [])
 
   // checkForUnprofessionalLanguage, return true if spicy language present
 
@@ -78,11 +79,13 @@ export default function App() {
     setPostsList(postsListClone)
   }
 
+  console.log('prompts:', prompts);
+
   return (
     <main className='App'>
       ##info icon w collapsable plea to not abuse an app with no auth##
       <Form 
-        prompts={prompts} // TODO:: replace 'null' w array of 'prompt' objects
+        prompts={prompts}
         author={author}
         savePost={savePost}
       />
@@ -91,6 +94,7 @@ export default function App() {
         postsList={postsList} 
         reactionTypes={reactionTypes}
         handleReactionCount={handleReactionCount}
+        prompts={prompts}
       />}
     </main>
   );

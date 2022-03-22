@@ -3,7 +3,7 @@
     {
       "id": 1,
       "author": {"id": 1, "username": "ABC"},
-      "prompt": {"id": 1, "text": "prompt placeholder"},
+      "prompt_id": 1,
       "text": "placeholder post 0",
       "spicy_language": false,
       "user_reaction_index": 1,
@@ -14,7 +14,7 @@
     {
       "id": 4,
       "author": {"id": 1, "username": "ABC"},
-      "prompt": {"id": 1, "text": "prompt placeholder"},
+      "prompt_id": 1,
       "text": "placeholder post 0",
       "spicy_language": false,
       "user_reaction_index": null,
@@ -25,7 +25,7 @@
     {
       "id": 3,
       "author": {"id": 1, "username": "ABC"},
-      "prompt": {"id": 1, "text": "prompt placeholder"},
+      "prompt_id": 1,
       "text": "placeholder post 0",
       "spicy_language": false,
       "user_reaction_index": null,
@@ -36,7 +36,7 @@
     {
       "id": 2,
       "author": {"id": 1, "username": "ABC"},
-      "prompt": {"id": 1, "text": "prompt placeholder"},
+      "prompt_id": 1,
       "text": "placeholder post 0",
       "spicy_language": false,
       "user_reaction_index": null,

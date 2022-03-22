@@ -7,10 +7,10 @@ export default function PostsList(props) {
     return (
       <PostItem
         key={postItemIndex}
-        // postItemIndex={postItemIndex}
         post={post}
         reactionTypes={props.reactionTypes}
         handleReactionCount={props.handleReactionCount}
+        // prompts={props.prompts}
       />
     )
   })
