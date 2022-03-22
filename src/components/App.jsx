@@ -54,26 +54,70 @@ export default function App() {
     // })
   }
 
+  // Adjust array of numbers by +/-1, min output num = 0
+  const incrementArray = (arr, i, increment = true) => {
+    // return arr.map((num, index) => {
+      // if (index !== i) return num;
+      if (increment) arr[i] += 1;
+      if (arr[i] >= 1) arr[i] -= 1;
+    // })
+    return arr;
+  }
+
+  if (prevUserReaction === null) {
+    // AA Set user_reaction_index to userReaction
+    // CC Add 1 to count @ userReaction
+  }
+
+  if (prevUserReaction === userReaction) {
+    // AB Toggle user_reaction_index to null
+    // BB Subtract 1 from count, count can't be negative
+  }
+
+  if (prevUserReaction >= 0) {
+    // AA Set user_reaction_index to userReaction
+    // BB Subtract 1 from count, count can't be negative    
+    // CC Add 1 to count @ userReaction
+  }
+
+  AA:
+    // AA Set user_reaction_index to userReaction
+    user_reaction_index = userReaction
+
+  AB:
+    // AB Toggle user_reaction_index to null
+    user_reaction_index = null
+
+  BB:
+    // BB Subtract 1 from count, count can't be negative
+    if (reaction_counts[userReaction] >= 1)
+    reaction_counts[userReaction] -= 1
+
+  CC:
+    // CC Add 1 to count @ userReaction
+    reaction_counts[userReaction] += 1
+
+  
+
   // Manage reaction counts and user's reaction when a reaction is clicked
-  const handleReactionCount = (postIndex, newReaction) => {
-    const postsClone = [...postsList]
-    const post = postsClone[postIndex]
-    const existingReaction = post.user_reaction;
-    // If user's existing reaction is an index of reaction_counts and that count isn't about to go negative, subtract 1
-    if (existingReaction >= 0 && existingReaction < post.reaction_counts.length && post.reaction_counts[existingReaction] >=1) {
-      post.reaction_counts[existingReaction] =- 1
+  const handleReactionCount = (postItem, userReaction) => {
+    const prevUserReaction = postItem.user_reaction_index;
+    if (prevUserReaction >= 0 && prevUserReaction === userReaction) {
+      postItem.user_reaction_index = null;
+      postItem.reaction_counts = incrementArray(postItem.reaction_counts, userReaction, false)
+    } else { 
+      postItem.user_reaction_index = userReaction;
+      postItem.reaction_counts = incrementArray(postItem.reaction_counts, userReaction)
+      postItem.reaction_counts = incrementArray(postItem.reaction_counts, prevUserReaction, false)
     }
-    // If user has clicked their existing reaction, set it to null
-    if (existingReaction === newReaction) {
-      post.user_reaction = null
-    } else {
-      // add 1 to count of the reaction just clicked
-      post.reaction_counts[newReaction] += 1
-      // set user's reaction to index of reaction just clicked
-      post.user_reaction = newReaction
-    }
-    postsClone[postIndex] = post
-    setPostsList(postsClone)
+    const postsListClone = [...postsList].map((p) => {
+      if (p.id === postItem.id) return postItem;
+      return p;
+    })
+
+    // console.log(postsListClone);
+
+    setPostsList(postsListClone)
   }
 
   return (

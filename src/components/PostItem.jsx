@@ -2,12 +2,12 @@ import Content from './Content';
 import Reaction from './Reaction';
 import './sass-styles/Post.scss'
 
-export default function Post ({post, reactionTypes, handleReactionCount}) {
+export default function Post ({post, postItemIndex, reactionTypes, handleReactionCount}) {
   // calculateAge accepts timestamp as milliseconds or new Date() object, returns age in days
   const calculateAge = ms => Math.floor((Date.now() - ms) / 1000 / 60 / 60 / 24)
 
   // Combine reaction counts and types into an array of Reaction components
-  const reactionArray = post.reaction_counts.map((count, index) => {
+  const reactionArray = post.reaction_counts.map((count, reactionIndex) => {
     // Return simple error if reaction arrays are not equal length
     if (post.reaction_counts.length !== reactionTypes.length) {
       return "<div>Error</div>"
@@ -15,10 +15,10 @@ export default function Post ({post, reactionTypes, handleReactionCount}) {
     return (
       <Reaction 
         count={count} 
-        icon={reactionTypes[index].icon}
-        label={reactionTypes[index].label}
-        onClick={() => handleReactionCount(post, index)}
-        isUserReaction={post.userReaction===index}
+        icon={reactionTypes[reactionIndex].icon}
+        label={reactionTypes[reactionIndex].label}
+        onClick={() => handleReactionCount(post, reactionIndex)}
+        isUserReaction={post.userReaction===reactionIndex}
       />
     )
   })
