@@ -64,52 +64,69 @@ export default function App() {
     return arr;
   }
 
-  if (prevUserReaction === null) {
-    // AA Set user_reaction_index to userReaction
-    // CC Add 1 to count @ userReaction
-  }
+  // if (prevUserReaction === null) {
+  //   // AA Set user_reaction_index to userReaction
+  //   saveUserReaction(userReaction)
+  //   // CC Add 1 to count @ userReaction
+  // }
 
-  if (prevUserReaction === userReaction) {
-    // AB Toggle user_reaction_index to null
-    // BB Subtract 1 from count, count can't be negative
-  }
+  // if (prevUserReaction === userReaction) {
+  //   // AB Toggle user_reaction_index to null
+  //   saveUserReaction(null)
+  //   // BB Subtract 1 from prev count, count can't be negative
+  // }
 
-  if (prevUserReaction >= 0) {
-    // AA Set user_reaction_index to userReaction
-    // BB Subtract 1 from count, count can't be negative    
-    // CC Add 1 to count @ userReaction
-  }
+  // if (prevUserReaction >= 0) {
+  //   // AA Set user_reaction_index to userReaction
+  //   saveUserReaction(userReaction)
+  //   // BB Subtract 1 from prev count, count can't be negative    
+  //   // CC Add 1 to count @ userReaction
+  // }
 
-  AA:
-    // AA Set user_reaction_index to userReaction
-    user_reaction_index = userReaction
+  // A: 
+  // const saveUserReaction = reaction => {
+  //   postItem.user_reaction_index = reaction
+  // }
 
-  AB:
-    // AB Toggle user_reaction_index to null
-    user_reaction_index = null
+  // AA:
+  //   // AA Set user_reaction_index to userReaction
+  //   user_reaction_index = userReaction
 
-  BB:
-    // BB Subtract 1 from count, count can't be negative
-    if (reaction_counts[userReaction] >= 1)
-    reaction_counts[userReaction] -= 1
+  // AB:
+  //   // AB Toggle user_reaction_index to null
+  //   user_reaction_index = null
 
-  CC:
-    // CC Add 1 to count @ userReaction
-    reaction_counts[userReaction] += 1
+  // BB:
+  //   // BB Subtract 1 from count, count can't be negative
+  //   if (reaction_counts[userReaction] >= 1) {
+  //     reaction_counts[userReaction] -= 1
+  //   }
+
+  // CC:
+  //   // CC Add 1 to count @ userReaction
+  //   reaction_counts[userReaction] += 1
 
   
 
   // Manage reaction counts and user's reaction when a reaction is clicked
   const handleReactionCount = (postItem, userReaction) => {
     const prevUserReaction = postItem.user_reaction_index;
-    if (prevUserReaction >= 0 && prevUserReaction === userReaction) {
-      postItem.user_reaction_index = null;
-      postItem.reaction_counts = incrementArray(postItem.reaction_counts, userReaction, false)
-    } else { 
-      postItem.user_reaction_index = userReaction;
-      postItem.reaction_counts = incrementArray(postItem.reaction_counts, userReaction)
-      postItem.reaction_counts = incrementArray(postItem.reaction_counts, prevUserReaction, false)
+    
+    // Do AB or AA:
+    if (prevUserReaction === userReaction) {
+      postItem.user_reaction_index = null
+    } else {
+      
+      postItem.user_reaction_index = userReaction
+      // Do CC:
+      postItem.reaction_counts[userReaction] += 1
     }
+    
+    // Do BB: Subtract 1 from prevCount if prevUserReaction was a number
+    if (prevUserReaction >= 0 && postItem.reaction_counts[userReaction] >= 1) {
+        postItem.reaction_counts[prevUserReaction] -= 1
+    }
+
     const postsListClone = [...postsList].map((p) => {
       if (p.id === postItem.id) return postItem;
       return p;

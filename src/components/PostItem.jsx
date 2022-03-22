@@ -18,7 +18,7 @@ export default function Post ({post, postItemIndex, reactionTypes, handleReactio
         icon={reactionTypes[reactionIndex].icon}
         label={reactionTypes[reactionIndex].label}
         onClick={() => handleReactionCount(post, reactionIndex)}
-        isUserReaction={post.userReaction===reactionIndex}
+        isUserReaction={post.user_reaction_index===reactionIndex}
       />
     )
   })
