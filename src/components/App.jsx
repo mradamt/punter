@@ -54,86 +54,27 @@ export default function App() {
     // })
   }
 
-  // Adjust array of numbers by +/-1, min output num = 0
-  const incrementArray = (arr, i, increment = true) => {
-    // return arr.map((num, index) => {
-      // if (index !== i) return num;
-      if (increment) arr[i] += 1;
-      if (arr[i] >= 1) arr[i] -= 1;
-    // })
-    return arr;
-  }
-
-  // if (prevUserReaction === null) {
-  //   // AA Set user_reaction_index to userReaction
-  //   saveUserReaction(userReaction)
-  //   // CC Add 1 to count @ userReaction
-  // }
-
-  // if (prevUserReaction === userReaction) {
-  //   // AB Toggle user_reaction_index to null
-  //   saveUserReaction(null)
-  //   // BB Subtract 1 from prev count, count can't be negative
-  // }
-
-  // if (prevUserReaction >= 0) {
-  //   // AA Set user_reaction_index to userReaction
-  //   saveUserReaction(userReaction)
-  //   // BB Subtract 1 from prev count, count can't be negative    
-  //   // CC Add 1 to count @ userReaction
-  // }
-
-  // A: 
-  // const saveUserReaction = reaction => {
-  //   postItem.user_reaction_index = reaction
-  // }
-
-  // AA:
-  //   // AA Set user_reaction_index to userReaction
-  //   user_reaction_index = userReaction
-
-  // AB:
-  //   // AB Toggle user_reaction_index to null
-  //   user_reaction_index = null
-
-  // BB:
-  //   // BB Subtract 1 from count, count can't be negative
-  //   if (reaction_counts[userReaction] >= 1) {
-  //     reaction_counts[userReaction] -= 1
-  //   }
-
-  // CC:
-  //   // CC Add 1 to count @ userReaction
-  //   reaction_counts[userReaction] += 1
-
-  
-
-  // Manage reaction counts and user's reaction when a reaction is clicked
-  const handleReactionCount = (postItem, userReaction) => {
-    const prevUserReaction = postItem.user_reaction_index;
-    
-    // Do AB or AA:
-    if (prevUserReaction === userReaction) {
+  /* Manage reaction counts and stored user_reaction when a reaction is clicked
+     Handles updates to user_reaction_index and reaction_counts array:
+     1. If prevReaction = newReaction: toggle reaction 'off' (to null), -1 from count
+     2. If prevReaction = null: update reaction, +1 to new count
+     3. If prevReaction != null: update reaction, +1 to new count, -1 from old count avoiding negative counts
+  */
+  const handleReactionCount = (postItem, newR) => {
+    const prevR = postItem.user_reaction_index;
+    if (prevR === newR) {
       postItem.user_reaction_index = null
     } else {
-      
-      postItem.user_reaction_index = userReaction
-      // Do CC:
-      postItem.reaction_counts[userReaction] += 1
+      postItem.user_reaction_index = newR
+      postItem.reaction_counts[newR] += 1
     }
-    
-    // Do BB: Subtract 1 from prevCount if prevUserReaction was a number
-    if (prevUserReaction >= 0 && postItem.reaction_counts[userReaction] >= 1) {
-        postItem.reaction_counts[prevUserReaction] -= 1
+    if (prevR >= 0 && postItem.reaction_counts[newR] >= 1) {
+        postItem.reaction_counts[prevR] -= 1
     }
-
     const postsListClone = [...postsList].map((p) => {
       if (p.id === postItem.id) return postItem;
       return p;
     })
-
-    // console.log(postsListClone);
-
     setPostsList(postsListClone)
   }
 
