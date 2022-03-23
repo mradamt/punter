@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import db from '../fauxdb.json'
+import db from '../dataFromDB.json'
 
 
 export default function useApplicationData() {
