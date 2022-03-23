@@ -3,7 +3,7 @@ import './sass-styles/Form.scss'
 
 export default function Form (props) {
   const [text, setText] = useState('')
-  const [prompt, setPrompt] = useState(props.prompts[0])
+  const [prompt, setPrompt] = useState(props.prompts["1"])
 
   // Trigger savePost function on (text, prompt) and clear form's textbox
   const submitPost = (event) => {

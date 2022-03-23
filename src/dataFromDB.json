@@ -73,6 +73,9 @@
     }
   },
   "prompts": {
-    "1": {"id":1,"text":"If puns were given the respect they deserve"}
+    "1": {
+      "id":1,
+      "text":"If puns were given the respect they deserve"
+    }
   }
 }
