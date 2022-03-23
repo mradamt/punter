@@ -53,11 +53,10 @@ export default function useApplicationData() {
   }
 
   /* Manage reaction counts and stored user_reaction when a reaction is clicked
-     Handles updates to user_reaction_index and reaction_counts array:
-     1. If prevReaction = newReaction: toggle reaction 'off' (to null), -1 from count
-     2. If prevReaction = null: update reaction, +1 to new count
-     3. If prevReaction != null: update reaction, +1 to new count, -1 from old count avoiding negative counts
-  */
+   * Handles updates to user_reaction_index and reaction_counts array:
+   * 1. If prevReaction = newReaction: toggle reaction 'off' (to null), -1 from count
+   * 2. If prevReaction = null: update reaction, +1 to new count
+   * 3. If prevReaction != null: update reaction, +1 to new count, -1 from old count avoiding negative counts */
   const handleReactionCount = (postItem, newR) => {
     const prevR = postItem.user_reaction_index;
     if (prevR === newR) {

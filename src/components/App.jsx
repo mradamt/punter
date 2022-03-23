@@ -23,13 +23,17 @@ export default function App() {
         author={author}
         savePost={savePost}
       />
+
       <Filters />
-      {postsList && reactionTypes && <PostsList
-        postsList={postsList} 
-        reactionTypes={reactionTypes}
-        handleReactionCount={handleReactionCount}
-        prompts={prompts}
-      />}
+
+      {postsList && reactionTypes && 
+        <PostsList
+          postsList={postsList} 
+          reactionTypes={reactionTypes}
+          handleReactionCount={handleReactionCount}
+          prompts={prompts}
+        />
+      }
     </main>
   );
 }
