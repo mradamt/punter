@@ -1,54 +1,54 @@
 {
   "posts": [
     {
-      "id":1,
-      "creation_date":"2022-01-31T17:00:00.000Z",
-      "spicy_language":false,
-      "text":"We could be having a lot of fun on ebikes made by Wheeebikes",
-      "prompt_id":1,
-      "user_reaction_index":null,
-      "author":{
-        "id":1,
-        "username":"ABC"
+      "id": 1,
+      "creation_date": "2022-01-31T17:00:00.000Z",
+      "spicy_language": false,
+      "text": "We could be having a lot of fun on ebikes made by Wheeebikes",
+      "prompt_id": 1,
+      "user_reaction_index": null,
+      "author": {
+        "id": 1,
+        "username": "ABC"
       },
       "reaction_counts":[2,0,1,0,0]
     },
     {
-      "id":2,
-      "creation_date":"2022-01-25T17:00:00.000Z",
-      "spicy_language":false,
-      "text":"And we were shopping for a boat, where better than Totes Boats?",
-      "prompt_id":1,
-      "user_reaction_index":null,
-      "author":{
-        "id":2,
-        "username":"DEF"
+      "id": 2,
+      "creation_date": "2022-01-25T17:00:00.000Z",
+      "spicy_language": false,
+      "text": "And we were shopping for a boat, where better than Totes Boats?",
+      "prompt_id": 1,
+      "user_reaction_index": null,
+      "author": {
+        "id": 2,
+        "username": "DEF"
       },
       "reaction_counts":[1,1,1,0,0]
     },
     {
-      "id":3,
-      "creation_date":"2022-01-20T17:00:00.000Z",
-      "spicy_language":false,
-      "text":"If McDonald's ran out of soft serve again we could just go to Mockdonalds",
-      "prompt_id":1,
-      "user_reaction_index":null,
-      "author":{
-        "id":3,
-        "username":"GHI"
+      "id": 3,
+      "creation_date": "2022-01-20T17:00:00.000Z",
+      "spicy_language": false,
+      "text": "If McDonald's ran out of soft serve again we could just go to Mockdonalds",
+      "prompt_id": 1,
+      "user_reaction_index": null,
+      "author": {
+        "id": 3,
+        "username": "GHI"
       },
       "reaction_counts":[1,0,2,0,0]
     },
     {
-      "id":4,
-      "creation_date":"2022-01-12T17:00:00.000Z",
-      "spicy_language":false,
-      "text":"The agency helping the unemployed re-enter the workforce would be called Resume",
-      "prompt_id":1,
-      "user_reaction_index":null,
-      "author":{
-        "id":1,
-        "username":"ABC"
+      "id": 4,
+      "creation_date": "2022-01-12T17:00:00.000Z",
+      "spicy_language": false,
+      "text": "The agency helping the unemployed re-enter the workforce would be called Resume",
+      "prompt_id": 1,
+      "user_reaction_index": null,
+      "author": {
+        "id": 1,
+        "username": "ABC"
       },
       "reaction_counts":{"1":0, "2": 0}
     }
