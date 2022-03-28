@@ -17,13 +17,11 @@ export default function useApplicationData() {
 
   useEffect(() => {
     Promise.all([
-      // axios.get('/api/posts'),
+      axios.get('/api/posts'),
       axios.get('/api/reaction_types'),
-      // axios.get('/api/prompts'),
-      // axios.get(`/api/user_reactions/1`)
+      axios.get('/api/prompts'),
     ])
-      .then(([response]) => {
-        console.log('server response:', response.data);
+      .then(([posts, reaction_types, prompts]) => {
         // setPostsList(posts.data);
         // setReactionTypes(reaction_types.data);
         // setPrompts(prompts.data);
