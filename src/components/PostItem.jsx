@@ -13,7 +13,7 @@ export default function Post (props) {
     .map(([id, count]) => {
       if (!reactionTypes[id]) {
         console.log(`Error: reaction id '${id}' not a valid index of reaction_types`);
-        return "<div>Error</div>"
+        return "[error]"
       }
       return (
         <Reaction
