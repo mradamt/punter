@@ -63,7 +63,7 @@ export default function useApplicationData() {
       postItem.user_reaction_index = newR
       postItem.reaction_counts[newR] += 1
     }
-    if (prevR >= 0 && postItem.reaction_counts[newR] >= 1) {
+    if (postItem.reaction_counts[prevR] && postItem.reaction_counts[newR] >= 1) {
         postItem.reaction_counts[prevR] -= 1
     }
     const postsListClone = [...postsList].map((p) => {
