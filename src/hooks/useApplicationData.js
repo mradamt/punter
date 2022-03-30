@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const spicyWordList = require('badwords-list').array
+
 export default function useApplicationData() {
   const [postsList, setPostsList] = useState()
   const [reactionTypes, setReactionTypes] = useState()
   const [prompts, setPrompts] = useState()
   const [author, setAuthor] = useState({
       "author": {
-        "id": 10, // logged in user_id
+        "id": 3, // logged in user_id
         "username": "TED" // logged in username
       }
   })
@@ -28,16 +30,29 @@ export default function useApplicationData() {
       })
   }, [])
 
-  // checkForUnprofessionalLanguage, return true if spicy language present
+  // isProfane lifted from: https://github.com/web-mech/badwords/blob/master/lib/badwords.js
+  const isProfane = text => {
+    return spicyWordList.filter(word => {
+      const wordExp = new RegExp(`\\b${word.replace(/(\W)/g, '\\$1')}\\b`, 'gi');
+      return wordExp.test(text);
+    }).length > 0 || false;
+  }
 
-  // convertToServerReadableFormat function that outputs data in format server is expecting
-
-  const savePost = (newPost) => {
+  const savePost = (text, promptId) => {
     // Check for spicy language in post text
+    const spicy_language = isProfane(text)
+    // If spicy_language, confirm its use is deliberate & note it'll be filtered out of posts by default
+
     // Insert form data into db-friendly format
+    const postData = {
+      user_id: author.id,
+      prompt_id: promptId,
+      text,
+      spicy_language
+    }
     // POST new post to db
     // .then Add full post entry to local state
-    setPostsList([newPost, ...postsList])
+    // setPostsList([newPost, ...postsList])
     // return axios.post(`/api/posts`, post)
     // .then(() => {
     //   setPostsList([newPost, ...postsList])
