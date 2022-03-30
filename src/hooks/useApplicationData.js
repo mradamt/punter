@@ -55,20 +55,20 @@ export default function useApplicationData() {
    * 1. If prevReaction = newReaction: toggle reaction 'off' (to null), -1 from count
    * 2. If prevReaction = null: update reaction, +1 to new count
    * 3. If prevReaction != null: update reaction, +1 to new count, -1 from old count avoiding negative counts */
-  const handleReactionCount = (postItem, newR) => {
-    const prevR = postItem.user_reaction_index;
+  const handleReactionCount = (p, newR) => {
+    const prevR = p.user_reaction_index;
     if (prevR === newR) {
-      postItem.user_reaction_index = null
+      p.user_reaction_index = null
     } else {
-      postItem.user_reaction_index = newR
-      postItem.reaction_counts[newR] += 1
+      p.user_reaction_index = newR
+      p.reaction_counts[newR] += 1
     }
-    if (postItem.reaction_counts[prevR] && postItem.reaction_counts[newR] >= 1) {
-        postItem.reaction_counts[prevR] -= 1
+    if (p.reaction_counts[prevR] && p.reaction_counts[newR] >= 1) {
+      p.reaction_counts[prevR] -= 1
     }
-    const postsListClone = [...postsList].map((p) => {
-      if (p.id === postItem.id) return postItem;
-      return p;
+    const postsListClone = [...postsList].map((post) => {
+      if (post.id === p.id) return p;
+      return post;
     })
     setPostsList(postsListClone)
   }
