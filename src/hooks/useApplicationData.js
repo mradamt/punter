@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-import db from '../dataFromDB.json'
-
-
 export default function useApplicationData() {
-  const [postsList, setPostsList] = useState(db.posts)
-  const [reactionTypes, setReactionTypes] = useState(db.reaction_types)
-  const [prompts, setPrompts] = useState(db.prompts)
+  const [postsList, setPostsList] = useState()
+  const [reactionTypes, setReactionTypes] = useState()
+  const [prompts, setPrompts] = useState()
   const [author, setAuthor] = useState({
       "author": {
         "id": 10, // logged in user_id
@@ -22,9 +19,9 @@ export default function useApplicationData() {
       axios.get('/api/prompts'),
     ])
       .then(([posts, reaction_types, prompts]) => {
-        // setPostsList(posts.data);
-        // setReactionTypes(reaction_types.data);
-        // setPrompts(prompts.data);
+        setPostsList(posts.data);
+        setReactionTypes(reaction_types.data);
+        setPrompts(prompts.data);
       })
       .catch(err => {
         console.log(err);

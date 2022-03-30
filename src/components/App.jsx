@@ -18,15 +18,17 @@ export default function App() {
   return (
     <main className='App'>
       ##info icon w collapsable plea to not abuse an app with no auth##
-      <Form 
-        prompts={prompts}
-        author={author}
-        savePost={savePost}
-      />
+      {prompts && 
+        <Form 
+          prompts={prompts}
+          author={author}
+          savePost={savePost}
+        />
+      }
 
       <Filters />
 
-      {postsList && reactionTypes && 
+      {postsList && reactionTypes && prompts &&
         <PostsList
           postsList={postsList} 
           reactionTypes={reactionTypes}
