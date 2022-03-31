@@ -10,7 +10,7 @@ export default function PostsList(props) {
         post={post}
         reactionTypes={props.reactionTypes}
         handleReactionCount={props.handleReactionCount}
-        prompt={props.prompts[post.prompt.id]}
+        prompt={props.prompts[post.prompt_id]}
       />
     )
   })
