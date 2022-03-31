@@ -38,28 +38,33 @@ export default function useApplicationData() {
     }).length > 0 || false;
   }
 
-  const savePost = (text, promptId) => {
-    // Check for spicy language in post text
-    const spicy_language = isProfane(text)
-    // If spicy_language, confirm its use is deliberate & note it'll be filtered out of posts by default
+  const toLocalFormat = (partialPost) => {
+    const reaction_counts = {}
+    for (const id in reactionTypes) {reaction_counts[id] = 0}
+    return ({
+      ...partialPost,
+      user_reaction_index: null,
+      author: author.author,
+      reaction_counts
+    })
+  }
 
-    // Insert form data into db-friendly format
+  const savePost = (text, promptId) => {
+    const spicy_language = isProfane(text)
+    // TODO // If spicy_language, confirm its use is deliberate & note it'll be filtered out of posts by default
     const postData = {
-      user_id: author.id,
+      user_id: author.author.id,
       prompt_id: promptId,
       text,
       spicy_language
     }
-    // POST new post to db
-    // .then Add full post entry to local state
-    // setPostsList([newPost, ...postsList])
-    // return axios.post(`/api/posts`, post)
-    // .then(() => {
-    //   setPostsList([newPost, ...postsList])
-    // })
-    // .catch(err => {
-    //   console.log(err);
-    // })
+    axios.post('/api/posts', postData)
+    .then((res) => {
+      setPostsList([toLocalFormat(res.data), ...postsList])
+    })
+    .catch(err => {
+      console.log(err);
+    })
   }
 
   /* Manage reaction counts and stored user_reaction when reaction clicked
