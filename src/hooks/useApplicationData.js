@@ -87,7 +87,20 @@ export default function useApplicationData() {
       if (post.id === p.id) return p;
       return post;
     })
-    setPostsList(postsListClone)
+    const reactionData = {
+      userId: author.author.id,
+      postId: p.id,
+      reactionId: p.user_reaction_index
+    }
+    axios.put('/api/user_post_reaction', reactionData)
+    .then(({data}) => {
+      if (data[0].post_id === p.id && data[0].reaction_type_id === p.user_reaction_index) {
+        setPostsList(postsListClone)
+      } else {
+        console.log('ERROR: server did not update data correctly')
+      }
+    })
+    .catch(err => console.log(err))
   }
 
   return ({
