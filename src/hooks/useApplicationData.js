@@ -70,8 +70,8 @@ export default function useApplicationData() {
   /* Manage reaction counts and stored user_reaction when reaction clicked
    * ... updates user_reaction_index and reaction_counts array as follows:
    * 1. If prevReaction = newReaction: reaction->null, -1 from count
-   * 2. If prevReaction = null: update reaction, +1 to new count
-   * 3. If prevReaction != null: update reaction, +1 to new count, -1 from old count min value 0 */
+   * 2. If prevReaction = null: reaction->newR, +1 to new count
+   * 3. If prevReaction != null: reaction->newR, +1 to new count, -1 from old count min value 0 */
   const handleReactionCount = (p, newR) => {
     const prevR = p.user_reaction_index;
     if (prevR === newR) {
@@ -94,7 +94,12 @@ export default function useApplicationData() {
     }
     axios.put('/api/user_post_reaction', reactionData)
     .then(({data}) => {
-      if (data[0].post_id === p.id && data[0].reaction_type_id === p.user_reaction_index) {
+      const d = data[0];
+      /* Check returned data matches what was intended; 
+       * NOTE: post.user_reaction_index is stored as String to allow quick
+       * ref of reactionTypes object but returns from server as Numnber */
+      if (p.user_reaction_index === String(d.reaction_type_id) && 
+          p.id === d.post_id) {
         setPostsList(postsListClone)
       } else {
         console.log('ERROR: server did not update data correctly')

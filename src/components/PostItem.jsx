@@ -8,7 +8,9 @@ export default function Post (props) {
   // Calc age (days) of new Date() object or time in milliseconds
   const calculateAge = ms => Math.floor((Date.now() - ms) / 1000 / 60 / 60 / 24)
 
-  // Combine reaction counts and types into an array of Reaction components
+  /* Combine reaction counts and types into an array of Reaction components
+   * NOTE: post.user_reaction_index is stored as String to allow quick 
+   * ref of reactionTypes object */
   const reactions = Object.entries(post.reaction_counts)
     .map(([id, count]) => {
       if (!reactionTypes[id]) {
