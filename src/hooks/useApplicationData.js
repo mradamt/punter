@@ -39,13 +39,11 @@ export default function useApplicationData() {
   }
 
   const toLocalFormat = (partialPost) => {
-    const reaction_counts = {}
-    for (const id in reactionTypes) {reaction_counts[id] = 0}
     return ({
       ...partialPost,
       user_reaction_id: null,
       author: author.author,
-      reaction_counts
+      reaction_counts: reactionTypes.map(e => 0)
     })
   }
 
