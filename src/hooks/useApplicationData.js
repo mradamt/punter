@@ -16,7 +16,7 @@ export default function useApplicationData() {
 
   useEffect(() => {
     Promise.all([
-      axios.get('/api/posts'),
+      axios.get(`/api/posts/${author.author.id}`),
       axios.get('/api/reaction_types'),
       axios.get('/api/prompts'),
     ])
