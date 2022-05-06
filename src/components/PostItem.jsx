@@ -8,23 +8,20 @@ export default function Post (props) {
   // Calc age (days) of new Date() object or time in milliseconds
   const calculateAge = ms => Math.floor((Date.now() - ms) / 1000 / 60 / 60 / 24)
 
-  /* Combine reaction counts and types into an array of Reaction components
-   * NOTE: post.user_reaction_index is stored as String to allow quick 
-   * ref of reactionTypes object */
-  const reactions = Object.entries(post.reaction_counts)
-    .map(([id, count]) => {
-      if (!reactionTypes[id]) {
-        console.log(`Error: reaction id '${id}' not a valid index of reaction_types`);
+  // Create array of Reaction components using reaction_counts & reaction_types
+  const reactions = post.reaction_counts.map((count, i) => {
+      if (!reactionTypes[i]) {
+        console.log(`Error: reaction index '${i}' not a valid index of reaction_types`);
         return "[error]"
       }
       return (
         <Reaction
-          key={id}
+          key={i}
           count={count} 
-          icon={reactionTypes[id].icon}
-          label={reactionTypes[id].label}
-          onClick={() => handleReactionCount(post, id)}
-          isUserReaction={post.user_reaction_index===id}
+          icon={reactionTypes[i].icon}
+          label={reactionTypes[i].label}
+          onClick={() => handleReactionCount(post, i)}
+          isUserReaction={post.user_reaction_id===reactionTypes[i].id}
         />
       )
     })

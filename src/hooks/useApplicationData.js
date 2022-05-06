@@ -43,7 +43,7 @@ export default function useApplicationData() {
     for (const id in reactionTypes) {reaction_counts[id] = 0}
     return ({
       ...partialPost,
-      user_reaction_index: null,
+      user_reaction_id: null,
       author: author.author,
       reaction_counts
     })
@@ -67,40 +67,40 @@ export default function useApplicationData() {
     })
   }
 
-  /* Manage reaction counts and stored user_reaction when reaction clicked
-   * ... updates user_reaction_index and reaction_counts array as follows:
-   * 1. If prevReaction = newReaction: reaction->null, -1 from count
-   * 2. If prevReaction = null: reaction->newR, +1 to new count
-   * 3. If prevReaction != null: reaction->newR, +1 to new count, -1 from old count min value 0 */
-  const handleReactionCount = (p, newR) => {
-    const prevR = p.user_reaction_index;
+  const handleReactionCount = (p, newI) => {
+    // Constants for new & old reaction_type_id & index of count & type arrays
+    const newR = reactionTypes[newI].id
+    const prevR = p.user_reaction_id;
+    const prevI = reactionTypes.findIndex(r => r.id === prevR)
+    /* Update user_reaction_type & reaction_counts arrays
+     * 1. prevReaction===newReaction: reaction->null, -1 from prev min 0
+     * 2. prevReaction===null: reaction->newR, +1 to new count
+     * 3. Otherwise: reaction->newR, +1 to new count, -1 from prev min 0 */
     if (prevR === newR) {
-      p.user_reaction_index = null
+      p.user_reaction_id = null
     } else {
-      p.user_reaction_index = newR
-      p.reaction_counts[newR] += 1
+      p.user_reaction_id = newR
+      p.reaction_counts[newI] += 1
     }
-    if (p.reaction_counts[prevR] && p.reaction_counts[newR] >= 1) {
-      p.reaction_counts[prevR] -= 1
+    if (p.user_reaction_id && p.reaction_counts[prevI] >= 1) {
+      p.reaction_counts[prevI] -= 1
     }
-    const postsListClone = [...postsList].map((post) => {
-      if (post.id === p.id) return p;
-      return post;
-    })
+    // Create server-readable object to update reactions data
     const reactionData = {
       userId: author.author.id,
       postId: p.id,
-      reactionId: p.user_reaction_index
+      reactionId: p.user_reaction_id
     }
+    // Update server & on return update local
     axios.put('/api/user_post_reaction', reactionData)
     .then(({data}) => {
       const d = data[0];
-      /* Check returned data matches what was intended; 
-       * NOTE: post.user_reaction_index is stored as String to allow quick
-       * ref of reactionTypes object but returns from server as Numnber */
-      if (p.user_reaction_index === String(d.reaction_type_id) && 
-          p.id === d.post_id) {
-        setPostsList(postsListClone)
+      // Check returned data matches what was intended & update local state 
+      if (p.user_reaction_id === d.reaction_type_id && p.id === d.post_id) {
+        setPostsList([...postsList].map((post) => {
+          if (post.id === p.id) return p;
+          return post;
+        }))
       } else {
         console.log('ERROR: server did not update data correctly')
       }
