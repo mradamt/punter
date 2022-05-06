@@ -67,9 +67,8 @@ export default function useApplicationData() {
     })
   }
 
-  const handleReactionCount = (p, newI) => {
-    // Constants for new & old reaction_type_id & index of count & type arrays
-    const newR = reactionTypes[newI].id
+  const handleReactionCount = (p, newI, newR) => {
+    // Constants for old reaction_type_id & index of reaction arrays
     const prevR = p.user_reaction_id;
     const prevI = reactionTypes.findIndex(r => r.id === prevR)
     /* Update user_reaction_type & reaction_counts arrays
@@ -82,7 +81,7 @@ export default function useApplicationData() {
       p.user_reaction_id = newR
       p.reaction_counts[newI] += 1
     }
-    if (p.user_reaction_id && p.reaction_counts[prevI] >= 1) {
+    if (prevR && p.reaction_counts[prevI] > 0) {
       p.reaction_counts[prevI] -= 1
     }
     // Create server-readable object to update reactions data
@@ -95,7 +94,7 @@ export default function useApplicationData() {
     axios.put('/api/user_post_reaction', reactionData)
     .then(({data}) => {
       const d = data[0];
-      // Check returned data matches what was intended & update local state 
+      // Check returned data matches what was intended; update local state 
       if (p.user_reaction_id === d.reaction_type_id && p.id === d.post_id) {
         setPostsList([...postsList].map((post) => {
           if (post.id === p.id) return p;
