@@ -8,7 +8,9 @@ export default function Post (props) {
   // Calc age (days) of new Date() object or time in milliseconds
   const calculateAge = ms => Math.floor((Date.now() - ms) / 1000 / 60 / 60 / 24)
 
-  // Create array of Reaction components
+  /* Create array of Reaction components. Arrays 'reactionTypes' and
+   * 'reaction_counts' are equal length, 'counts' effectively an extension
+   * of 'types' since server constructs both from one list of IDs */
   const reactions = reactionTypes.map((r, i) => {
       if (isNaN(post.reaction_counts[i])) {
         console.log(`Error: reaction index '${i}' not a valid index of reaction_counts array`);
