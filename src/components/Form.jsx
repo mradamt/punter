@@ -9,7 +9,10 @@ export default function Form (props) {
   const submitPost = (event) => {
     event.preventDefault()
     props.savePost(text, prompt.id)
-    // setText('')
+      .then(() => {
+        setText('')
+      })
+      .catch(err => console.log(err))
   }
 
   return (

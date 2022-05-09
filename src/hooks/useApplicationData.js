@@ -56,13 +56,13 @@ export default function useApplicationData() {
       text,
       spicy_language
     }
-    axios.post('/api/posts', postData)
+    return (axios.post('/api/posts', postData)
     .then((res) => {
       setPostsList([toLocalFormat(res.data), ...postsList])
     })
     .catch(err => {
       console.log(err);
-    })
+    }))
   }
 
   const handleReactionCount = (p, newI, newR) => {
