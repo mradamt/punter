@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-// import axios from 'axios';
+import axios from 'axios';
 
 import './index.css';
 
-// axios.defaults.baseURL = "http://localhost:8001/"
+if (process.env.REACT_APP_API_BASE_URL) {
+  axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
+}
 
 ReactDOM.render(
   <React.StrictMode>
