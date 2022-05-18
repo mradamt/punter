@@ -1,4 +1,3 @@
-import Content from './Content';
 import Reaction from './Reaction';
 import './sass-styles/Post.scss'
 
