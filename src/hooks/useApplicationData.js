@@ -9,8 +9,8 @@ export default function useApplicationData() {
   const [prompts, setPrompts] = useState()
   const [author, setAuthor] = useState({
       "author": {
-        "id": 3, // logged in user_id
-        "username": "TED" // logged in username
+        "id": 1, // logged in user_id
+        "username": "DAD" // logged in username
       }
   })
 
