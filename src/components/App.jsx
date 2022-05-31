@@ -26,7 +26,11 @@ export default function App() {
         />
       }
 
-      <Filters />
+      {postsList && 
+        <Filters 
+          postsList={postsList}
+        />
+      }
 
       {postsList && reactionTypes && prompts &&
         <PostsList
