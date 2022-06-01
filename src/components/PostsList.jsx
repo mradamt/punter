@@ -4,7 +4,7 @@ import './sass-styles/Posts.scss';
 export default function PostsList(props) {
   // Add reaction types and handleReactionCount function to each PostItem component
   const postItemArray = props.postsList.map((post) => {
-    if (!props.filters.showSpicyLanguage && post.spicy_language) {
+    if (post.spicy_language && !props.filters.showSpicyLanguage) {
       return
     }
 

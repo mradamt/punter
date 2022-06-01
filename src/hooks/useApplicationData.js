@@ -14,7 +14,7 @@ export default function useApplicationData() {
       }
   })
   const [filters, setFilters] = useState({
-    hideSpicyLanguage: true
+    showSpicyLanguage: false
   })
 
   useEffect(() => {
