@@ -11,8 +11,10 @@ export default function App() {
     reactionTypes,
     prompts,
     author,
+    filters,
     savePost,
-    handleReactionCount
+    handleReactionCount,
+    handleFilters
   } = useApplicationData()
   
   return (
@@ -28,7 +30,8 @@ export default function App() {
 
       {postsList && 
         <Filters 
-          postsList={postsList}
+          filters={filters}
+          handleFilters={handleFilters}
         />
       }
 
@@ -38,6 +41,7 @@ export default function App() {
           reactionTypes={reactionTypes}
           handleReactionCount={handleReactionCount}
           prompts={prompts}
+          filters={filters}
         />
       }
     </main>

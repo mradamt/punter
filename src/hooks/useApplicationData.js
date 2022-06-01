@@ -13,6 +13,9 @@ export default function useApplicationData() {
         "username": "DAD" // logged in username
       }
   })
+  const [filters, setFilters] = useState({
+    hideSpicyLanguage: true
+  })
 
   useEffect(() => {
     Promise.all([
@@ -105,12 +108,18 @@ export default function useApplicationData() {
     .catch(err => console.log(err))
   }
 
+  const handleFilters = () => {
+    console.log('handleFilters called');
+  }
+
   return ({
     postsList,
     reactionTypes,
     prompts,
     author,
+    filters,
     savePost,
-    handleReactionCount
+    handleReactionCount,
+    handleFilters
   })
 }
