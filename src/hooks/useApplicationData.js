@@ -109,7 +109,11 @@ export default function useApplicationData() {
   }
 
   const handleFilters = () => {
-    console.log('handleFilters called');
+    const swap = !filters.showSpicyLanguage
+    setFilters({
+      ...filters,
+      showSpicyLanguage: swap
+    })
   }
 
   return ({
