@@ -1,5 +1,5 @@
 import PostItem from './PostItem';
-import './sass-styles/Posts.scss';
+import './sass-styles/PostsList.scss';
 
 export default function PostsList(props) {
   // Add reaction types and handleReactionCount function to each PostItem component

@@ -1,5 +1,5 @@
 import Reaction from './Reaction';
-import './sass-styles/Post.scss'
+import './sass-styles/PostItem.scss'
 
 export default function Post (props) {
   const {post, reactionTypes, handleReactionCount, prompt} = props;
