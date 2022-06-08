@@ -1,4 +1,3 @@
-import Button from "./FilterButton";
 import './sass-styles/Filters.scss'
 
 export default function Filters (props) {
