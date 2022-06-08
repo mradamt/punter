@@ -19,7 +19,9 @@ export default function App() {
   
   return (
     <main className='App'>
-      ##info icon w collapsable plea to not abuse an app with no auth##
+      <header className='main-header'>
+        <img src='Twitter-Logo-2010-2012-edit.png' alt='Punter logo' />
+      </header>
       {prompts && 
         <Form 
           prompts={prompts}
