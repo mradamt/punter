@@ -20,10 +20,10 @@ export default function Form (props) {
       <form action='/posts' method='POST' onSubmit={submitPost}>
         <div className='form-l-side'>
           <div className='form-prompt'>
-            {prompt.text}
+            ::: Prompt ::: {prompt.text}
           </div>
           <div className='form-input'>
-            <input
+            <textarea
               value={text} 
               onChange={event => setText(event.target.value)} 
               placeholder="there'd be..."
