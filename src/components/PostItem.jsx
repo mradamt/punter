@@ -30,17 +30,17 @@ export default function Post (props) {
   return (
     <div className='postItem'>
       <div className="postItem-content">
-        <p className="postItem-content-prompt">{prompt.text}</p>
-        <p className="postItem-content-text">{post.text}</p>
+        <span className="postItem-content-prompt">{prompt.text}</span>
+        <span className="postItem-content-text">{post.text}</span>
       </div>
       <div className='postItem-metadata'>
-        <div className='postItem-metadata-reactions'>{reactions}</div>
-        <div className='postItem-metadata-detail'>
-          <div className='postItem-metadata-detail-auth'>'{post.author.username}'</div>
-          <div className='postItem-metadata-detail-date'>
+        <div className='postItem-metadata-left'>
+          <div className='postItem-metadata-left-auth'>{post.author.username}</div>
+          <div className='postItem-metadata-left-date'>
             {calculateAge(new Date(String(post.creation_date)))} days ago
           </div>
         </div>
+        <div className='postItem-metadata-right'>{reactions}</div>
       </div>
     </div>
   )

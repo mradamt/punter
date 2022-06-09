@@ -1,31 +1,49 @@
+@import "components/sass-styles/variables.scss";
+
 .postItem {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgb(241, 135, 135);
   border-radius: 0.5em;
-  // width: 90%;
   padding: 0.5em;
   margin: 0.5em;
+  background-color: $background-colour-postItem;
   .postItem-content {
     display: flex;
-    align-items: center;
-    width: 90%;
-    height: 3em;
-    border: 1px solid grey;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 2%;
+    text-align: left;
+    background-color: white;
+    border-radius: 0.25em;
+    .postItem-content-prompt {
+      color: $font-colour-secondary;
+    }
+    .postItem-content-text {
+      padding-top: 0.5em;
+    }
   }
   .postItem-metadata {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // border: 1px dashed darkblue;
-    width: 80%;
-    .postItem-metadata-reactions {
+    margin-top: 0.5em;
+    .postItem-metadata-left {
       display: flex;
+      flex-direction: column;
+      width: 25%;
+      .postItem-metadata-left-auth {
+        padding-bottom: 0.5em;
+      }
+      .postItem-metadata-left-date {
+        font-size: smaller;
+      }
     }
-    .postItem-metadata-detail {
-      border: 1px solid lightcoral;
+    .postItem-metadata-right {
+      display: flex;
+      width: 75%;
     }
   }
 }
