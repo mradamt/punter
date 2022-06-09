@@ -1,10 +1,16 @@
-.filter-posts {
+.filters-area {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0.5em;
-  padding: 1em;
-  border-top: 2px solid #696969;
-  border-radius: 0.5em;
-  border-bottom: 1px solid #696969;
+  max-width: 75em;
+  .filters {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.5em;
+    padding: 1em;
+    border-top: 2px solid #696969;
+    border-bottom: 1px solid #696969;
+    width: 100%;
+  }
 }
