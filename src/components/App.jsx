@@ -22,6 +22,7 @@ export default function App() {
       <header className='main-header'>
         <img src='Twitter-Logo-2010-2012-edit.png' alt='Punter logo' />
       </header>
+      
       {prompts && 
         <Form 
           prompts={prompts}

@@ -16,22 +16,24 @@ export default function Form (props) {
   }
 
   return (
-    <section className='submission-form'>
+    <section className='form'>
       <form action='/posts' method='POST' onSubmit={submitPost}>
-        <div className='prompt'>
-          {prompt.text}
-          <span className='submission-form-text'>
-            <input 
+        <div className='form-l-side'>
+          <div className='form-prompt'>
+            {prompt.text}
+          </div>
+          <div className='form-input'>
+            <input
               value={text} 
               onChange={event => setText(event.target.value)} 
-              placeholder="there'd be [blank]"
+              placeholder="there'd be..."
               />
-          </span>
+          </div>
         </div>
-        <span className='submission-form-author'>
-          {props.author.author.username}
-        </span>
-        <button type='submit'>Post</button>
+        <div className='form-r-side'>
+          <span className='form-author'>{props.author.author.username}</span>
+          <button type='submit'>Post</button>
+        </div>
       </form>
     </section>
   )

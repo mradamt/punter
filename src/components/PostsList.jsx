@@ -20,7 +20,7 @@ export default function PostsList(props) {
   })
 
   return (
-    <section className='posts'>
+    <section className='postsList'>
       {postItemArray}
     </section>
   )

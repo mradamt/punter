@@ -1,18 +1,21 @@
 .reaction {
-  width: 7em;
+  width: 20%;
   background-color: white;
   border: none;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .reaction-count {
     font-weight: bold;
   }
   .reaction-icon img {
-    height: 2.2em;
-    width: 2.2em;
-    margin-bottom: -4px;
+    width: 50%;
+    margin-bottom: -5px;
   }
   .reaction-label {
     color: grey;
+    font-size: 75%;
   }
 }
 .reaction--highlight {
