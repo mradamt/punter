@@ -6,15 +6,13 @@ export default function Reaction (props) {
 
   return (
     <button className={reactionClass} onClick={props.onClick}>
-      <div className="reaction-label">
-        {props.label}
-      </div>
-      <div className="reaction-icon">
+        <div className="reaction-label">
+          {props.label}
+        </div>
         <img src={props.icon} alt={props.icon} />
-      </div>
-      <div className="reaction-count">
-        {props.count}
-      </div>
+        <div className="reaction-count">
+          {props.count}
+        </div>
     </button>
   )
 }

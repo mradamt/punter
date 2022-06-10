@@ -3,19 +3,23 @@
 .reaction {
   border: none;
   border-radius: 0.25em;
-  margin: 0em 0.25em 0em 0.25em;
+  // margin: 0em 0.25em 0em 0.25em;
+  max-width: 18%;
+  padding: 1px 3px;
   .reaction-label {
     text-align: right;
+    max-height: 1em;
+    max-width: 100%;
     color: $font-colour-secondary;
-    font-size: 70%;
+    font-size: 2vw;
   }
-  .reaction-icon img {
-    width: 40%;
+  img {
+    width: 80%;
     margin-bottom: -1em;
   }
   .reaction-count {
     color: $font-colour-secondary;
-    font-size: 80%;
+    font-size: 3vw;
     text-align: right;
   }
 }
