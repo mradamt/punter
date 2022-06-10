@@ -4,6 +4,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: aliceblue;
 }
 
 .App {
@@ -26,13 +27,9 @@ body {
   html {
     font-size: 12px;
   }
-
-  .layout {
-    flex-direction: column;
-  }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 450px) {
   html {
     font-size: 10px;
   }
