@@ -1,10 +1,12 @@
+@import "components/sass-styles/variables.scss";
+
 * {
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: aliceblue;
+  background-color: $background-colour-main;
 }
 
 .App {
@@ -14,7 +16,7 @@ body {
 
 .main-header{
   height: 4em;
-  background-color: rgb(69, 69, 69);
+  background-color: #454545;
   display: flex;
   align-items: center;
   justify-content: center;
