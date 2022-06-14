@@ -20,7 +20,7 @@ export default function App() {
   return (
     <main className='App'>
       <header className='main-header'>
-        <img src='Twitter-Logo-2010-2012-edit.png' alt='Punter logo' />
+        <img src='Twitter-Logo-2010-2012-edit-emojiYellow.png' alt='Punter logo' />
       </header>
       
       {prompts && 

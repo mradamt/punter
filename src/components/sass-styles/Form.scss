@@ -1,3 +1,5 @@
+@import "components/sass-styles/variables.scss";
+
 .form {
   display: flex;
   justify-content: center;
@@ -16,7 +18,7 @@
       justify-content: flex-start;
       .form-prompt {
         font-size: 1em;
-        color: #696969;
+        color: $font-colour-secondary;
         padding-bottom: 0.5em;
         display: flex;
         justify-content: flex-start;
@@ -40,7 +42,7 @@
       }
       button {
         padding: 0.5em 1em 0.5em;
-        background-color: #fec701;
+        background-color: #fcea26;
         border: none;
         border-radius: 0.2em;
         font-size: inherit;
